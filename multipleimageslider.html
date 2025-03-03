@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Image Slider</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: Arial, sans-serif; }
+        .slider-container { 
+            position: relative; 
+            width: 80%; 
+            margin: auto; 
+            overflow: hidden; 
+            max-height: 400px;
+        }
+        .slides {
+            display: flex; 
+            transition: transform 0.5s ease-in-out;
+            width: 200%; /* Adjusted width for multiple slides */
+        }
+        .slide {
+            flex: 0 0 20%; /* Display 5 images at a time */
+            display: flex; 
+            justify-content: center; 
+            align-items: center;
+            transition: transform 0.3s;
+        }
+        .slide img {
+            width: 100%; 
+            height: auto; 
+            max-height: 400px;
+            object-fit: cover;
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+        .slide img:hover {
+            transform: scale(1.1);
+        }
+        .prev, .next {
+            position: absolute; 
+            top: 50%; 
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5); 
+            color: white; 
+            border: none;
+            padding: 10px; 
+            cursor: pointer; 
+            font-size: 18px;
+        }
+        .prev { left: 10px; }
+        .next { right: 10px; }
+        .slider-container:hover .slides {
+            animation-play-state: paused;
+        }
+    </style>
+</head>
+<body>
+    <div class="slider-container" onmouseover="pauseSlide()" onmouseout="resumeSlide()">
+        <div class="slides">
+            <div class="slide"><img src="image1.jpg" alt="Image 1" onclick="enlargeImage(this)"></div>
+            <div class="slide"><img src="image2.jpg" alt="Image 2" onclick="enlargeImage(this)"></div>
+            <div class="slide"><img src="image3.jpg" alt="Image 3" onclick="enlargeImage(this)"></div>
+            <div class="slide"><img src="image4.jpg" alt="Image 4" onclick="enlargeImage(this)"></div>
+            <div class="slide"><img src="image5.jpg" alt="Image 5" onclick="enlargeImage(this)"></div>
+            <div class="slide"><img src="image6.jpg" alt="Image 6" onclick="enlargeImage(this)"></div>
+            <div class="slide"><img src="image7.jpg" alt="Image 7" onclick="enlargeImage(this)"></div>
+            <div class="slide"><img src="image8.jpg" alt="Image 8" onclick="enlargeImage(this)"></div>
+            <div class="slide"><img src="image9.jpg" alt="Image 9" onclick="enlargeImage(this)"></div>
+            <div class="slide"><img src="image10.jpg" alt="Image 10" onclick="enlargeImage(this)"></div>
+        </div>
+        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="next" onclick="moveSlide(1)">&#10095;</button>
+    </div>
+    <script>
+        let index = 0;
+        let interval;
+        function moveSlide(step) {
+            const slides = document.querySelector('.slides');
+            const totalSlides = document.querySelectorAll('.slide').length / 2; // Adjusted for multiple images at once
+            index = (index + step + totalSlides) % totalSlides;
+            slides.style.transform = `translateX(${-index * 20}%)`; // Moves by 5 images at a time
+        }
+        function startSlide() {
+            interval = setInterval(() => moveSlide(1), 3000);
+        }
+        function pauseSlide() {
+            clearInterval(interval);
+        }
+        function resumeSlide() {
+            startSlide();
+        }
+        function enlargeImage(img) {
+            let modal = document.createElement("div");
+            modal.style.position = "fixed";
+            modal.style.top = "0";
+            modal.style.left = "0";
+            modal.style.width = "100%";
+            modal.style.height = "100%";
+            modal.style.backgroundColor = "rgba(0,0,0,0.8)";
+            modal.style.display = "flex";
+            modal.style.justifyContent = "center";
+            modal.style.alignItems = "center";
+            modal.onclick = () => document.body.removeChild(modal);
+            let enlargedImg = document.createElement("img");
+            enlargedImg.src = img.src;
+            enlargedImg.style.maxWidth = "90%";
+            enlargedImg.style.maxHeight = "90%";
+            modal.appendChild(enlargedImg);
+            document.body.appendChild(modal);
+        }
+        startSlide();
+    </script>
+</body>
+</html>

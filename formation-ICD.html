@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Homepage</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+    }
+    .right-body {
+      text-align: center; /* Center-align the content in the right body */
+      width: auto; 
+      height: auto; 
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    h2 {
+      text-align: center;
+      font-weight: bold;
+      color: darkblue;
+      margin-top: 20px; /* Adjusts distance from top */
+      margin-bottom: 30px; /* Adds space before accordion */
+    }
+    .accordion {
+      width: 80%; /* Adjusts width of the accordion */
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      overflow: hidden;
+      margin: 0 auto;
+    }
+    .accordion-item {
+      border-bottom: 1px solid #ddd;
+      text-align: left;
+    }
+    .accordion-header {
+      background: lightblue;
+      padding: 15px;
+      cursor: pointer;
+      font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.3s ease;
+      border-radius: 5px;
+      margin: 5px;
+      text-align: center;
+      font-size: 16px;
+    }
+    .accordion-header:hover {
+      background: darkblue;
+      color: white;
+      transform: scale(1.05);
+      font-size: 18px;
+    }
+    .accordion-content {
+      display: none;
+      padding: 15px;
+      background: #f9f9f9;
+      border-radius: 5px;
+    }
+    .map-container {
+      width: 100%;
+      height: 300px;
+      margin-top: 10px;
+    }
+  </style>
+  <script>
+    function toggleAccordion(id) {
+      let selectedContent = document.getElementById(id);
+      if (selectedContent.style.display === "block") {
+        selectedContent.style.display = "none";
+      } else {
+        let contents = document.getElementsByClassName("accordion-content");
+        for (let i = 0; i < contents.length; i++) {
+          contents[i].style.display = "none";
+        }
+        selectedContent.style.display = "block";
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="webpage-container">
+    <!-- Load Upper Header -->
+    <div id="upper-header-placeholder"></div>
+    <!-- Load Lower Header -->
+    <div id="lower-header-placeholder"></div>
+    <!-- Load Marquee Section -->
+    <div id="marquee-placeholder"></div>
+    
+    <!-- ===== Main Content Area ===== -->
+    <div class="container">
+      <!-- Load Sidebar -->
+      <div id="sidebar-placeholder"></div>
+      <div class="right-body">
+        <!-- Accordion Section -->
+        <div class="accordion">
+            <h2>Customs Indore Jurisdiction- ICD</h2>
+          <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion('ICD-Tihi')">ICD Tihi</div>
+            <div id="ICD-Tihi" class="accordion-content">
+              <p><strong>Assistant Commissioner Name:</strong> Rajesh Nair, AC</p>
+              <p><strong>Email:</strong> rajeshgn.c099301@gov.in</p>
+              <p><strong>Phone:</strong>0731-2437876</p>
+              <p><strong>Address:</strong> Office of the Deputy/
+                Assistant Commissioner of
+                Customs, Inland Container Depot- MMLP, Tihi, AgraMumbai National Highway,
+                Village-Tihi, Teh.-Mhow,
+                Distt.- Indore, (M.P.)- 453331.</p>
+              <iframe class="map-container" src="https://www.google.com/maps/place/22%C2%B037'15.8%22N+75%C2%B037'33.4%22E/@22.6210521,75.6233573,1041m/data=!3m2!1e3!4b1!4m4!3m3!8m2!3d22.6210521!4d75.6259322?hl=en&entry=ttu&g_ep=EgoyMDI1MDIxOS4xIKXMDSoASAFQAw%3D%3D"></iframe>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion('ICD-Dhannad')">ICD Dhannad</div>
+            <div id="ICD-Dhannad" class="accordion-content">
+              <p><strong>Assistant Commissioner Name:</strong> Jadav Jayesh Khodidas</p>
+              <p><strong>Email:</strong> jayeshkj.g019101@gov.in</p>
+              <p><strong>Phone:</strong>0731-2439072</p>
+              <p><strong>Address:</strong> Office of the Deputy/Assistant Commissioner of
+                Customs, Inland Container Depot, Dhannad, Survey No.-981, Pithampur -Indore
+                Airport Road, Village -Dhannad, District- Indore (M.P.)- 453001.</p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion('ICD-Malanpur')">ICD Malanpur</div>
+            <div id="ICD-Malanpur" class="accordion-content">
+              <p><strong>Assistant Commissioner Name:</strong> Methilesh Dwivedi</p>
+              <p><strong>Email:</strong> methileshd.g209401@gov.in</p>
+              <p><strong>Phone:</strong>0731-00000</p>
+              <p><strong>Address:</strong> Office of the Deputy/ Assistant Commissioner of Customs Inland Container Depot, Malanpur, Near Malanpur Railway Station, Rithaura Kalan (M.P.)- 476444.</p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion('ICD-Mandideep')">ICD Mandideep</div>
+            <div id="ICD-Mandideep" class="accordion-content">
+              <p><strong>Assistant Commissioner Name:</strong> Ajay Kumar</p>
+              <p><strong>Email:</strong> ajaykumards.c019401@gov.in</p>
+              <p><strong>Phone:</strong>0755-2990212</p>
+              <p><strong>Address:</strong> Office of the Deputy/ Assistant Commissioner of
+                Customs, Inland Container Depot, 34, Sector-1A, New
+                Industrial Area, Mandideep, Dist. Raisen (M.P.)-462046.</p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion('ICD-Raipur')">ICD Raipur</div>
+            <div id="ICD-Raipur" class="accordion-content">
+              <p><strong>Assistant Commissioner Name:</strong> Rajendra K. Swarnkar</p>
+              <p><strong>Email:</strong> rajendra.swarnakar@gov.in</p>
+              <p><strong>Phone:</strong>0731-00000</p>
+              <p><strong>Address:</strong> Office of the Deputy/ Assistant Commissioner of
+                Customs, Inland Container Depot, Multimodal Logistics
+                Park (MMLP), Navagaon, N.H. 53, Atal Nagar, Naya Raipur (C.G.)- 492 101.</p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion('ICD-Kheda')">ICD Kheda</div>
+            <div id="ICD-Kheda" class="accordion-content">
+              <p><strong>Assistant Commissioner Name:</strong>  Jadav Jayesh Khodidas</p>
+              <p><strong>Email:</strong>  jayeshkj.g019101@gov.in</p>
+              <p><strong>Phone:</strong>0731-2439072</p>
+              <p><strong>Address:</strong> Office of the Deputy/ Assistant Commissioner of
+                Customs, Inland Container Depot, Kheda, 13 B - Kheda
+                Industrial Growth Center, Sector –III, Pithampur (M.P.) – 454774.</p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion('ICD-Powerkheda')">ICD Powerkheda</div>
+            <div id="ICD-Powerkheda" class="accordion-content">
+              <p><strong>Assistant Commissioner Name:</strong> Ajay Kumar</p>
+              <p><strong>Email:</strong> ajaykumards.c019401@gov.in</p>
+              <p><strong>Phone:</strong>0755-2990212</p>
+              <p><strong>Address:</strong> Office of the Deputy/ Assistant Commissioner of
+                Customs, Inland Container Depot, Kesar Multimodal
+                Logistics Limited, Near Powarkheda Railway Station, VillageRaisolpur TehsilHoshangabad (M.P.) - 461110.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Load Footer -->
+    <div id="footer-placeholder"></div>
+  </div>
+  
+  <!-- Include external JavaScript file -->
+  <script src="scripts.js"></script>
+  
+  <script>
+    // Function to load external HTML into a placeholder
+    function loadHTML(url, placeholderId, callback) {
+      fetch(url)
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById(placeholderId).innerHTML = data;
+          if (callback) callback();
+        })
+        .catch(error => console.error('Error loading HTML:', error));
+    }
+    // Load upper-header, lower-header, marquee, footer, and sidebar
+    loadHTML('partials/upperheader.html', 'upper-header-placeholder');
+    loadHTML('partials/lowerheader.html', 'lower-header-placeholder', addDropdownListeners);
+    loadHTML('partials/footer.html', 'footer-placeholder');
+    loadHTML('partials/sidebar.html', 'sidebar-placeholder');
+    loadHTML('partials/marquee.html', 'marquee-placeholder');
+  </script>
+</body>
+</html>

@@ -1,0 +1,333 @@
+/* Global Reset and Common Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+  }
+  a {
+    text-decoration: none;
+  }
+  .webpage-container {
+    max-width: 1500px; /* Set a maximum width for the container */
+    margin: 0 auto; /* Center the container */
+    padding: 0 10px; /* Add some padding on the left and right sides */
+  }
+  
+  /* ================== Top Header Styles (Customs Indore) ================== */
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #e6f0ff;
+    padding: 5px 10px;
+    border-bottom: 3px solid #007bff;
+    }
+  .left-section {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0; /* Prevent shrinking */
+  }
+  .left-section img {
+    height: 120px;
+    margin-right: 10px;
+  }
+  .left-text {
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 1.5;
+    color: #0057b7; /* Dark Blue Color */
+    white-space: nowrap;
+  }
+  .centered-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-grow: 1;
+    color: #0057b7; /* Dark Blue Color */
+    padding: 10px;
+    white-space: nowrap;
+    max-width: 100%; /* Ensure it doesn't exceed the container width */
+    overflow: hidden; /* Hide overflow text */
+  }
+  .centered-text div {
+    margin: 3px 0;
+    white-space: nowrap; /* Prevent text from breaking into multiple lines */
+    overflow: hidden; /* Hide overflow text */
+    text-overflow: ellipsis; /* Add ellipsis for overflow text */
+  }
+  .right-section {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0; /* Prevent shrinking */
+  }
+  .right-section img {
+    height: 60px;
+    margin-left: 10px;
+    max-width: 100%;
+  }
+  
+  /* ================== Navigation Bar (Bottom Header from Customs Indore) ================== */
+  .bottom-header {
+    background-color: #b3d9ff; /* Darker Light Blue */
+    padding: 0;
+    text-align: center;
+    border-bottom: 3px solid #007bff;
+    position: relative;
+  }
+  .bottom-header ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  .bottom-header ul li {
+    position: relative;
+    padding: 5px 10px;
+    height: auto;
+    background-color: #b3d9ff;
+    cursor: pointer;
+    border-radius: 5px;
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 2;
+  }
+  .bottom-header ul li:hover {
+    background-color: #0073e6; /* Darker Blue */
+    color: white;
+  }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #b3d9ff;
+    min-width: 150px;
+    top: 100%;
+    left: 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    z-index: 1000;
+  }
+  .dropdown-content li {
+    padding: 10px;
+    color: black;
+    position: relative;
+    z-index: 1000;
+  }
+  .dropdown-content li:hover {
+    background-color: #0073e6;
+    color: white;
+  }
+  .nested-dropdown {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    background-color: #b3d9ff;
+    border-radius: 5px;
+    min-width: 200px;
+  }
+  .nested-dropdown li {
+    color: black;
+    display: block;
+  }
+  .dropdown-content li:hover > .nested-dropdown {
+    display: block;
+  }
+  .bottom-header ul li:hover > .dropdown-content {
+    display: block;
+  }
+  .dropdown-content > li > .nested-dropdown {
+    display: none;
+  }
+  .dropdown-content > li:hover > .nested-dropdown {
+    display: block;
+  }
+  .has-dropdown::after {
+    content: ' ▼';
+    font-size: 12px;
+    color: black;
+    margin-left: 5px;
+  }
+  .has-dropdown:hover::after {
+    color: white;
+  }
+  
+  /* ================== Main Container Layout ================== */
+  .container {
+    display: flex;
+    width: 100%;
+    min-height: calc(100vh - 230px); /* Adjusting for header and footer heights */
+  }
+  .marquee-container {
+    width: 100%;
+    overflow: hidden;
+    background-color: darkgray;
+    color: darkblue;
+    font-size: 20px;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+  }
+  .news-box {
+    background-color: #0057b7; /* Dark blue color */
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+    margin-right: 10px;
+    z-index: 1; /* Ensure it stays on top */
+  }
+  .marquee {
+    display: inline-block;
+    /* padding-left: 100%; */
+    margin-left: 10px; /* Ensure some space between the news box */
+    animation: marqueeAnimation 30s linear infinite; /* Slowed down animation */
+  }
+  @keyframes marqueeAnimation {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+  
+  /* ------------------ Left Sidebar (Navigation) ------------------ */
+  .sidebar-section {
+    width: 250px;
+    background-color: #f8f9fa; /* Off-white background color */
+    color: #0d47a1; /* Very dark blue text color */
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
+  }
+  .sidebar-section h6.section-main-title {
+    text-transform: uppercase;
+    font-size: 14px;
+    margin-bottom: 8px;
+    padding: 8px;
+    border: 2px solid #0d47a1;
+    border-radius: 5px;
+    text-align: center;
+    color: #0d47a1;
+    font-weight: bold;
+    background-color: #e3f2fd;
+  }
+  .nav-links {
+    list-style: none;
+    padding: 0;
+  }
+  .nav-links li {
+    padding: 5px 0;
+  }
+  .nav-links a {
+    background-color: #4fc3f7;
+    padding: 8px;
+    border-radius: 5px;
+    color: #0d47a1;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.2s;
+  }
+  .nav-links img {
+    width: 20px;
+    margin-right: 8px;
+    filter: brightness(0) invert(1);
+  }
+  .nav-links a:hover {
+    background-color: #29b6f6;
+    transform: scale(1.05);
+  }
+  
+  /* ------------------ Right Content Section ------------------ */
+  .right-body {
+    flex-grow: 1;
+    background-color: whitesmoke;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-left: 2px solid black;
+  }
+  
+  /* ================== Footer Section (Customs Indore) ================== */
+  .footer-wrapper {
+    background-color: #b3d9ff; /* Darker Light Blue for footer */
+    padding: 20px 0;
+  }
+  .carousel-wrapper {
+    background-color: #b3d9ff;
+    padding: 20px 0;
+    overflow: hidden;
+    position: relative;
+    width: 70%;
+    margin: 0 auto;
+  }
+  .carousel-container {
+    display: flex;
+    align-items: center;
+    animation: slide 40s linear infinite;
+    white-space: nowrap;
+  }
+  .carousel-container img {
+    margin-right: 20px;
+    height: 100px;
+  }
+  @keyframes slide {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  .arrow-left, .arrow-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+    z-index: 10;
+  }
+  .arrow-left {
+    left: 0;
+  }
+  .arrow-right {
+    right: 0;
+  }
+  .arrow-left:hover, .arrow-right:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  .footer-bottom-wrapper {
+    background-color: #b3d9ff;
+    padding: 5px 0;
+  }
+  .footer-bottom-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .footer-content {
+    font-size: 16px;
+    font-weight: bold;
+    color: #0057b7;
+  }
+  .footer-separator {
+    width: 100%;
+    height: 2px; /* Adjust the height as needed */
+    background-color: #007bff; /* Adjust the color as needed */
+    margin: 20px 0; /* Adjust the margin as needed */
+  }

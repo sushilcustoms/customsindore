@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customs Indore</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        /* Top Header Styles */
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #e6f0ff; /* Light blue background */
+            padding: 10px 20px;
+            border-bottom: 3px solid #007bff;
+        }
+        .left-section {
+            display: flex;
+            align-items: center;
+        }
+        .left-section img {
+            height: 80px;
+            margin-right: 15px;
+        }
+        .left-text {
+            font-size: 18px;
+            font-weight: bold;
+            line-height: 1.3;
+            color: #0057b7; /* Dark Blue Color */
+        }
+        .centered-text {
+            text-align: center;
+            flex-grow: 1;
+            color: #0057b7; /* Dark Blue Color */
+        }
+        .centered-text div {
+            margin: 3px 0;
+        }
+        .right-section {
+            display: flex;
+            align-items: center;
+        }
+       .right-section img {
+            height: 50px;
+            margin-left: 5px;
+        }        
+
+        /* Bottom Header Styles */
+        .bottom-header {
+            background-color: #b3d9ff; /* Darker Light Blue */
+            padding: 0;
+            text-align: center;
+            border-bottom: 3px solid #007bff;
+        }
+        .bottom-header ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .bottom-header ul li {
+            position: relative;
+            padding: 5px 10px;
+            height:auto;
+            background-color: #b3d9ff;
+            cursor: pointer;
+            border-radius:5px;
+            color: black;
+            font-size: 18px;
+            font-weight:bold;
+            line-height: 1.5; /* Adjust line-height to center text vertically */
+            display: inline-block; /* Ensure the border fits the text */
+        }
+        .bottom-header ul li:hover {
+            background-color: #0073e6; /* Darker Blue */
+            color: white;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #b3d9ff;
+            min-width: 150px;
+            top: 100%;
+            left: 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+        .dropdown-content li {
+            padding: 10px;
+            position: relative;
+            color: black;
+        }
+        .dropdown-content li:hover {
+            background-color: #0073e6;
+            color: white;
+        }
+        .nested-dropdown {
+            display: none;
+            position: absolute;
+            left: 100%;
+            top: 0;
+            background-color: #b3d9ff;
+            border-radius: 5px;
+            min-width: 150px;
+        }
+        .nested-dropdown li {
+            color: black;
+        }
+        .dropdown-content li:hover > .nested-dropdown {
+            display: block;
+        }
+        .bottom-header ul li:hover > .dropdown-content {
+            display: block;
+        }
+        .dropdown-content > li > .nested-dropdown {
+            display: none;
+        }
+        .dropdown-content > li:hover > .nested-dropdown {
+            display: block;
+        }
+        /* Separator Line */
+
+/* Footer Styles */
+.footer-wrapper {
+    background-color: #b3d9ff; /* Darker Light Blue for footer */
+    padding: 20px 0;
+}
+
+/* Upper Footer Section (Image Slider) */
+.wrapper.carousel-wrapper {
+    background-color: #b3d9ff;
+    padding: 20px 0;
+    overflow: hidden; /* To hide the part of images that go outside the container */
+    position: relative;
+}
+
+.carousel-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    animation: slide 40s linear infinite; /* Slower animation */
+    white-space: nowrap; /* Ensures all images are in one line */
+}
+
+.carousel-container img {
+    margin-right: 20px;
+    height: 100px; /* Adjust the size as needed */
+}
+
+/* Animation to move the images from right to left */
+@keyframes slide {
+    0% {
+        transform: translateX(100%); /* Start from the right */
+    }
+    100% {
+        transform: translateX(-100%); /* End at the left */
+    }
+}
+
+/* Center Alignment of Images */
+.carousel-wrapper {
+    width: 70%;
+    margin: 0 auto; /* Center the content */
+    position: relative;
+}
+
+/* Arrows for navigation */
+.arrow-left, .arrow-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+    z-index: 10;
+}
+
+.arrow-left {
+    left: 0;
+}
+
+.arrow-right {
+    right: 0;
+}
+
+.arrow-left:hover, .arrow-right:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Lower Footer Section */
+.footer-bottom-wrapper {
+    background-color: #b3d9ff; /* Matches the footer background */
+    padding: 10px 0;
+}
+.footer-bottom-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer-content {
+    font-size: 16px;
+    font-weight: bold;
+    color: #0057b7; /* Dark blue text */
+}
+                /* Footer Styles */
+                .footer-wrapper {
+            background-color: #b3d9ff; /* Darker Light Blue for footer */
+            padding: 20px 0;
+        }
+
+        /* Upper Footer Section (Image Slider) */
+        .wrapper.carousel-wrapper {
+            background-color: #b3d9ff;
+            padding: 20px 0;
+            overflow: hidden; /* To hide the part of images that go outside the container */
+            position: relative;
+        }
+
+        .carousel-container {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            animation: slide 40s linear infinite; /* Slower animation */
+            white-space: nowrap; /* Ensures all images are in one line */
+        }
+
+        .carousel-container img {
+            margin-right: 20px;
+            height: 100px; /* Adjust the size as needed */
+        }
+
+        /* Animation to move the images from right to left */
+        @keyframes slide {
+            0% {
+                transform: translateX(100%); /* Start from the right */
+            }
+            100% {
+                transform: translateX(-100%); /* End at the left */
+            }
+        }
+
+        /* Center Alignment of Images */
+        .carousel-wrapper {
+            width: 70%;
+            margin: 0 auto; /* Center the content */
+            position: relative;
+        }
+
+        /* Arrows for navigation */
+        .arrow-left, .arrow-right {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            font-size: 24px;
+            padding: 10px;
+            cursor: pointer;
+            border: none;
+            z-index: 10;
+        }
+
+        .arrow-left {
+            left: 0;
+        }
+
+        .arrow-right {
+            right: 0;
+        }
+
+        .arrow-left:hover, .arrow-right:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        /* Lower Footer Section */
+        .footer-bottom-wrapper {
+            background-color: #b3d9ff; /* Matches the footer background */
+            padding: 10px 0;
+        }
+        .footer-bottom-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .footer-content {
+            font-size: 16px;
+            font-weight: bold;
+            color: #0057b7; /* Dark blue text */
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Top Header -->
+    <div class="header">
+        <div class="left-section">
+            <img src="images/header/custom-logi.png" alt="Customs Logo">
+            <div class="left-text">
+                CUSTOMS INDORE<br>
+                Bhopal Zone<br>
+                Madhya Pradesh
+            </div>
+        </div>
+        <div class="centered-text">
+            <div style="font-size: 35px; font-weight: bold;"><span style="color: #0057b7;">कार्यालय प्रधान आयुक्त, सीमा शुल्क, इंदौर</span></div>
+            <div style="font-size: 22px; font-weight: bold;">OFFICE OF THE PRINCIPAL COMMISSIONER OF CUSTOMS, INDORE</div>
+            <div style="font-size: 20px; font-weight: bold;">तीसरी मंजिल, बी-जोन, बिज़नेस स्पेस, पिपलिया कुमार, निपनिया, इंदौर-४५२०१०</div>
+            <div style="font-size: 20px; font-weight: bold;">3rd FLOOR, B-ZONE, BUSINESS SPACE, PIPALIYA KUMAR, NIPANIA, INDORE-452010</div>
+            <div style="font-size: 20px; font-weight: bold;">(0731) 2920250, 2920251 &nbsp; &nbsp; E-mail: customs-indore@gov.in</div>
+        </div>
+        <div class="right-section">
+            <img src="images/header/flag-logo.png" alt="Flag Logo">
+            <img src="images/header/swach-bharat.png" alt="Swachhta Logo">
+        </div>
+    </div>
+
+    <!-- Bottom Header -->
+    <div class="bottom-header">
+        <ul>
+            <li>Home</li><li>About Us</li>
+            
+            <li>Formation
+                <ul class="dropdown-content" style="display: none;">
+                    <li>ICD
+                        <ul class="nested-dropdown">
+                            <li>ICD Tihi</li>
+                            <li>ICD Dhannad</li>
+			    <li>ICD Mandideep</li>
+                            <li>ICD Malanpur</li>
+                            <li>ICD Raipur</li>
+                            <li>ICD Kheda</li>
+                            <li>ICD Powerkheda</li>
+                         </ul>
+                    </li>
+                    <li>Circle
+                        <ul class="nested-dropdown">
+                            <li>Bhopal</li>
+			    <li>Indore</li>
+                            <li>Ujjain</li>
+			    <li>Jabalpur</li>
+                            <li>Raipur</li>
+                        </ul>
+                    </li>
+                    <li>Airport
+ 			<ul class="nested-dropdown">
+                            <li>Indore (DABHIA)</li>
+			    <li>Bhopal (Raja Bhoj)</li>
+                            <li>Chatarpur</li>
+			</ul>
+		</li>
+                </ul>
+            </li>
+
+		<li>Tax Legislation
+			<ul class="dropdown-content" style="display: none;">
+                            <li>Customs Act/Rules</li>
+                            <li>Customs Regulations</li>
+			    <li>Customs Notifications</li>
+                            <li>Customs Circulars</li>
+                            <li>Customs Guidelines</li>
+                            <li>Customs Tariff</li>
+                         </ul>
+		</li>
+		<li>Online Services
+			<ul class="dropdown-content" style="display: none;">
+                            <li>ICEGATE</li>
+                            <li>ECCS</li>
+			    <li>Verify CBIC DIN</li>
+                            <li>Complaince info. Portal</li>
+                            <li>Customs Duty Calculator</li>
+                            <li>Exchange Rate</li>
+                         </ul>
+		</li>
+		<li>News & Media
+			<ul class="dropdown-content" style="display: none;">
+                            <li>Departmental Magazines</li>
+                            <li>Photo Gallary</li>
+			    <li>Video Gallary</li>
+                            <li>Press Coverage</li>
+                            <li>Media Release</li>
+                            <li>Events & Highlights</li>
+                         </ul>
+
+		</li>
+		<li>Helpdesk</li>
+
+        </ul>
+    </div>
+
+    <script>
+        document.querySelectorAll('.bottom-header ul li').forEach(item => {
+            item.addEventListener('mouseover', () => {
+                let dropdown = item.querySelector('.dropdown-content');
+                if (dropdown) {
+                    dropdown.style.display = 'block';
+                }
+            });
+            item.addEventListener('mouseleave', () => {
+                let dropdown = item.querySelector('.dropdown-content');
+                if (dropdown) {
+                    dropdown.style.display = 'none';
+                }
+            });
+        });
+    </script>
+
+ <!-- Lower Header -->
+<div class="lower-header">
+    <!-- Lower header content -->
+</div>
+<!-- Footer Section -->
+<footer class="footer-wrapper">
+    <!-- Upper Footer Section (Image Slider) -->
+    <section class="wrapper carousel-wrapper">
+        <button class="arrow-left">&lt;</button>
+        <div class="container common-container carousel-container">
+            <a target="_blank" href="http://digitalindia.gov.in/" title="Digital India, External Link that opens in a new window">
+                <img src="images/footer/digital-india.png" alt="Digital India">
+            </a>
+            <a target="_blank" href="http://www.makeinindia.com/" title="Make In India, External Link that opens in a new window">
+                <img src="images/footer/makeinindia.png" alt="Make In India">
+            </a>
+            <a target="_blank" href="http://india.gov.in/" title="National Portal of India, External Link that opens in a new window">
+                <img src="images/footer/india-gov.png" alt="National Portal of India">
+            </a>
+            <a target="_blank" href="http://goidirectory.nic.in/" title="GOI Web Directory, External Link that opens in a new window">
+                <img src="images/footer/goidirectory.png" alt="GOI Web Directory">
+            </a>
+            <a target="_blank" href="https://data.gov.in/" title="Data portal, External Link that opens in a new window">
+                <img src="images/footer/data-gov.png" alt="Data portal">
+            </a>
+            <a target="_blank" href="https://mygov.in/" title="MyGov, External Link that opens in a new window">
+                <img src="images/footer/mygov.png" alt="MyGov Portal">
+            </a>
+            <a target="_blank" href="https://mygov.in/" title="World Customs Organization, External Link that opens in a new window">
+                <img src="images/footer/WCO.JPG" alt="World Customs Organization">
+            </a>
+            <a target="_blank" href="https://mygov.in/" title="World Customs Organization, External Link that opens in a new window">
+                <img src="images/footer/mci.png" alt="World Customs Organization">
+            </a>
+        </div>
+        <button class="arrow-right">&gt;</button>
+    </section>
+
+    <!-- Lower Footer Section -->
+    <div class="footer-bottom-wrapper">
+        <div class="footer-bottom-container">
+            <div class="footer-content">
+                <b> <strong>@2025 Indore Customs</strong> | Website Designed, Developed and Maintained by Indore Customs</b>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Add functionality for arrows
+    document.querySelector('.arrow-left').addEventListener('click', function() {
+        const container = document.querySelector('.carousel-container');
+        container.style.animation = 'none'; // Stop current animation
+        container.style.transition = 'transform 0.5s ease-in-out';
+        const currentTransform = getComputedStyle(container).transform;
+        const transformValue = currentTransform === 'none' ? '0' : currentTransform.split(',')[4];
+        container.style.transform = `translateX(${parseInt(transformValue) + 200}px)`; // Move left
+        setTimeout(() => {
+            container.style.transition = 'none';
+            container.style.transform = `translateX(${parseInt(transformValue) + 200}px)`; // Reset position
+            container.style.animation = 'slide 40s linear infinite'; // Restart animation
+        }, 500); // Wait for transition to complete
+    });
+
+    document.querySelector('.arrow-right').addEventListener('click', function() {
+        const container = document.querySelector('.carousel-container');
+        container.style.animation = 'none'; // Stop current animation
+        container.style.transition = 'transform 0.5s ease-in-out';
+        const currentTransform = getComputedStyle(container).transform;
+        const transformValue = currentTransform === 'none' ? '0' : currentTransform.split(',')[4];
+        container.style.transform = `translateX(${parseInt(transformValue) - 200}px)`; // Move right
+        setTimeout(() => {
+            container.style.transition = 'none';
+            container.style.transform = `translateX(${parseInt(transformValue) - 200}px)`; // Reset position
+            container.style.animation = 'slide 40s linear infinite'; // Restart animation
+        }, 500); // Wait for transition to complete
+    });
+</script>
+
+</body>
+</html>

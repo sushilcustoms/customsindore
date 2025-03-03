@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customs Indore</title>
+    <style>
+        /* Include your CSS here */
+        /* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+.container {
+    max-width: 1700px; /* Set a maximum width for the container */
+    margin: 0 auto; /* Center the container */
+    padding: 0 10px; /* Add some padding on the left and right sides */
+    
+}
+
+/* Top Header Styles */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #e6f0ff; /* Light blue background */
+    padding: 10px 20px;
+    border-bottom: 3px solid #007bff;
+}
+.left-section {
+    display: flex;
+    align-items: center;
+}
+.left-section img {
+    height: 150px;
+    margin-right: 15px;
+}
+.left-text {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1.3;
+    color: #0057b7; /* Dark Blue Color */
+}
+.centered-text {
+    text-align: center;
+    flex-grow: 1;
+    color: #0057b7; /* Dark Blue Color */
+}
+.centered-text div {
+    margin: 3px 0;
+}
+.right-section {
+    display: flex;
+    align-items: center;
+}
+.right-section img {
+    height: 100px;
+    margin-left: 5px;
+}
+
+/* Bottom Header Styles */
+.bottom-header {
+    background-color: #b3d9ff; /* Darker Light Blue */
+    padding: 0;
+    text-align: center;
+    border-bottom: 3px solid #007bff;
+    position: relative;
+}
+.bottom-header ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.bottom-header ul li {
+    position: relative;
+    padding: 5px 10px;
+    height: auto;
+    background-color: #b3d9ff;
+    cursor: pointer;
+    border-radius: 5px;
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.5;
+}
+.bottom-header ul li:hover {
+    background-color: #0073e6; /* Darker Blue */
+    color: white;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #b3d9ff;
+    min-width: 150px;
+    top: 100%;
+    left: 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+.dropdown-content li {
+    padding: 10px;
+    position: relative;
+    color: black;
+    z-index: 1000;
+}
+.dropdown-content li:hover {
+    background-color: #0073e6;
+    color: white;
+}
+.nested-dropdown {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    background-color: #b3d9ff;
+    border-radius: 5px;
+    min-width: 200px;
+}
+.nested-dropdown li {
+    color: black;
+    display: block;
+}
+.dropdown-content li:hover > .nested-dropdown {
+    display: block;
+}
+.bottom-header ul li:hover > .dropdown-content {
+    display: block;
+}
+.dropdown-content > li > .nested-dropdown {
+    display: none;
+}
+.dropdown-content > li:hover > .nested-dropdown {
+    display: block;
+}
+
+/* Body Part CSS */
+.upper-body, .lower-body {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+.upper-body .left-section, .lower-body .left-section {
+    flex: 1; /* 25% */
+    height: 400px; /* Adjust height as needed */
+    overflow: hidden; /* Hide overflow content */
+    position: relative;
+}
+.upper-body .left-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.left-content {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; /* Add margin to separate from the message */
+}
+
+.left-content img {
+    margin-right: 15px;
+}
+
+.text-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #0057b7; /* Dark Blue Color */
+    text-align: center;
+}
+
+.designation {
+    font-size: 16px;
+    color: #0057b7; /* Dark Blue Color */
+    text-align: center;
+}
+
+.message {
+    font-size: 14px;
+    color: #333;
+    text-align: justify;
+}
+.upper-body .center-section {
+    flex: 2; /* 50% */
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.upper-body .center-section .banner-slideshow {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.upper-body .center-section .banner-slideshow img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.upper-body .right-section, .lower-body .right-section {
+    flex: 1; /* 25% */
+    height: 400px; /* Adjust height as needed */
+    overflow: hidden; /* Hide overflow content */
+    position: relative;
+}
+.upper-body .left-section img, .lower-body .center-section img {
+    width: 100%;
+    height: auto;
+}
+.upper-body .center-section .banner-slideshow img {
+    display: none;
+}
+.upper-body .center-section .banner-slideshow img:first-child {
+    display: block;
+}
+.lower-body .center-section {
+    flex: 3; /* 50% */
+}
+/* Image Slider Styling */
+.image-slider {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+.image-slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensures the image fits within the box while maintaining aspect ratio */
+    display: none; /* Hide all images initially */
+}
+
+.image-slider img:first-child {
+    display: block; /* Show the first image initially */
+}
+
+/* Title box styling */
+.title-box {
+    background-color: #0057b7; /* Dark Blue Color */
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 5px 5px 0 0;
+    margin-bottom: 10px; /* Add margin to separate from content */
+}
+
+
+/* Quick Links and Useful Links Box Styling */
+.quick-links-box, .useful-links-box {
+    background-color: #e6f0ff; /* Light blue background */
+    border: 1px solid #007bff; /* Border color */
+    padding: 0; /* Remove padding to make table fit completely */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    flex-direction: column; /* Ensure content is stacked vertically */
+}
+.quick-links table, .useful-links table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.quick-links th, .useful-links th, .quick-links td, .useful-links td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #007bff; /* Line between rows */
+}
+
+.quick-links th, .useful-links th {
+    background-color: #0057b7; /* Dark Blue Color */
+    color: white;
+}
+
+.quick-links a, .useful-links a {
+    color: #0057b7; /* Dark Blue Color */
+    text-decoration: none;
+    display: block;
+}
+
+.quick-links a:hover, .useful-links a:hover {
+    background-color: #0073e6; /* Darker Blue on hover */
+    color: red; /* Red text color on hover */
+    text-decoration: underline;
+}
+
+/* Box styling */
+.box {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Footer Styles */
+.footer-wrapper {
+    background-color: #b3d9ff; /* Darker Light Blue for footer */
+    padding: 20px 0;
+}
+
+/* Upper Footer Section (Image Slider) */
+.wrapper.carousel-wrapper {
+    background-color: #b3d9ff;
+    padding: 20px 0;
+    overflow: hidden; /* To hide the part of images that go outside the container */
+    position: relative;
+}
+
+.carousel-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    animation: slide 40s linear infinite; /* Slower animation */
+    white-space: nowrap; /* Ensures all images are in one line */
+}
+
+.carousel-container img {
+    margin-right: 20px;
+    height: 100px; /* Adjust the size as needed */
+}
+
+/* Animation to move the images from right to left */
+@keyframes slide {
+    0% {
+        transform: translateX(100%); /* Start from the right */
+    }
+    100% {
+        transform: translateX(-100%); /* End at the left */
+    }
+}
+
+/* Center Alignment of Images */
+.carousel-wrapper {
+    width: 70%;
+    margin: 0 auto; /* Center the content */
+    position: relative;
+}
+
+/* Arrows for navigation */
+.arrow-left, .arrow-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+    z-index: 10;
+}
+
+.arrow-left {
+    left: 0;
+}
+
+.arrow-right {
+    right: 0;
+}
+
+.arrow-left:hover, .arrow-right:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Lower Footer Section */
+.footer-bottom-wrapper {
+    background-color: #b3d9ff; /* Matches the footer background */
+    padding: 10px 0;
+}
+.footer-bottom-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer-content {
+    font-size: 16px;
+    font-weight: bold;
+    color: #0057b7; /* Dark blue text */
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+    <!-- Top Header -->
+    <div class="header">
+        <div class="left-section">
+            <img src="images/header/custom-logi.png" alt="Customs Logo">
+            <div class="left-text">
+                CUSTOMS INDORE<br>
+                Bhopal Zone<br>
+                Madhya Pradesh & Chatisgarh
+            </div>
+        </div>
+        <div class="centered-text">
+            <div style="font-size: 22px; font-weight: bold;"><span style="color: #0057b7;">कार्यालय प्रधान आयुक्त, सीमा शुल्क, इंदौर</span></div>
+            <div style="font-size: 22px; font-weight: bold;">OFFICE OF THE PRINCIPAL COMMISSIONER OF CUSTOMS, INDORE</div>
+            <div style="font-size: 20px; font-weight: bold;">तीसरी मंजिल, बी-जोन, बिज़नेस स्पेस, पिपलिया कुमार, निपनिया, इंदौर-४५२०१०</div>
+            <div style="font-size: 20px; font-weight: bold;">3rd FLOOR, B-ZONE, BUSINESS SPACE, PIPALIYA KUMAR, NIPANIA, INDORE-452010</div>
+            <div style="font-size: 18px; font-weight: bold;">(0731) 2920250, 2920251 &nbsp; &nbsp; E-mail: customs-indore@gov.in</div>
+        </div>
+        <div class="right-section">
+            <img src="images/header/flag-logo.png" alt="Flag Logo">
+            <img src="images/header/swach-bharat.png" alt="Swachhta Logo">
+        </div>
+    </div>
+
+    <!-- Bottom Header -->
+    <div class="bottom-header">
+        <ul>
+            <li>Home</li><li>About Us</li>
+            <li>Formation
+                <ul class="dropdown-content" style="display: none;">
+                    <li>ICD
+                        <ul class="nested-dropdown">
+                            <li>ICD Tihi</li>
+                            <li>ICD Dhannad</li>
+                            <li>ICD Mandideep</li>
+                            <li>ICD Malanpur</li>
+                            <li>ICD Raipur</li>
+                            <li>ICD Kheda</li>
+                            <li>ICD Powerkheda</li>
+                         </ul>
+                    </li>
+                    <li>Circle
+                        <ul class="nested-dropdown">
+                            <li>Bhopal</li>
+                            <li>Indore</li>
+                            <li>Ujjain</li>
+                            <li>Jabalpur</li>
+                            <li>Raipur</li>
+                        </ul>
+                    </li>
+                    <li>Airport
+                         <ul class="nested-dropdown">
+                            <li>Indore (DABHIA)</li>
+                            <li>Bhopal (Raja Bhoj)</li>
+                            <li>Chatarpur</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+
+        <li>Tax Legislation
+            <ul class="dropdown-content" style="display: none;">
+                            <li>Customs Act/Rules</li>
+                            <li>Customs Regulations</li>
+                            <li>Customs Notifications</li>
+                            <li>Customs Circulars</li>
+                            <li>Customs Guidelines</li>
+                            <li>Customs Tariff</li>
+                         </ul>
+        </li>
+        <li>Online Services
+            <ul class="dropdown-content" style="display: none;">
+                            <li>ICEGATE</li>
+                            <li>ECCS</li>
+                            <li>Verify CBIC DIN</li>
+                            <li>Complaince info. Portal</li>
+                            <li>Customs Duty Calculator</li>
+                            <li>Exchange Rate</li>
+                         </ul>
+        </li>
+        <li>News & Media
+            <ul class="dropdown-content" style="display: none;">
+                            <li>Departmental Magazines</li>
+                            <li>Photo Gallary</li>
+                            <li>Video Gallary</li>
+                            <li>Press Coverage</li>
+                            <li>Media Release</li>
+                            <li>Events & Highlights</li>
+                         </ul>
+        </li>
+        <li>Helpdesk</li>
+        </ul>
+    </div>
+
+    
+
+    <!-- Lower Header -->
+    <div class="lower-header">
+        <!-- Lower header content -->
+    </div>
+    
+    <!-- Upper Body Part -->
+    <div class="upper-body">
+        <div class="box left-section">
+            <div class="left-content">
+            <img src="images/body-images/commr.jpg" alt="Commissioner's Photo" style="width: 150px; height: auto;">
+            <div class="text-content">
+                <div class="name">Shree Rajeev Agrawal</div>
+                <div class="designation">Pr. Commissioner of Customs Indore</div>
+            </div>
+        </div>
+        <div class="message">
+            <p>
+                Welcome to the Customs Indore website. As part of CBIC, Ministry of Finance, we are dedicated to facilitating trade, revenue collection, and law enforcement with efficiency and transparency. Overseeing ICDs, Air Cargo complexes, and Devi Ahilyabai Holkar International Airport, Indore, we ensure smooth trade operations while preventing smuggling. With digital initiatives like ICEGATE, we promote a paperless, efficient customs system. Our goal is to create a trade-friendly and secure environment that supports India's economic growth.
+            </p>
+        </div>
+    </div>
+        <div class="box center-section">
+            <div class="banner-slideshow">
+                <img src="images/banner/slider-1.jpeg" alt="Banner 1">
+                <img src="images/banner/slider-2.jpeg" alt="Banner 2">
+                <img src="images/banner/slider-3.jpg" alt="Banner 3">
+                <img src="images/banner/slider-4.jpg" alt="Banner 4">
+                <img src="images/banner/slider-5.jpg" alt="Banner 5">
+            </div>
+        </div>
+        <div class="box right-section">
+            <div class="message">
+                <div class="name">About Customs Indore</div>
+                <p> 
+                    Customs Indore, under the Central Board of Indirect Taxes and Customs (CBIC), Ministry of Finance, plays a crucial role in trade facilitation, revenue collection, and law enforcement in Madhya Pradesh. Established to regulate international trade, it oversees Inland Container Depots (ICDs), Air Cargo complexes, and international airports such as Devi Ahilyabai Holkar International Airport, Indore. Customs Indore ensures smooth import-export operations, enforces the Customs Act, 1962, and combats smuggling and illegal trade to safeguard national security. It has embraced digital initiatives like ICEGATE for seamless, paperless customs clearance, supporting the Ease of Doing Business initiative. Additionally, it conducts awareness programs and actively participates in events like International Customs Day and Hindi Pakhwada. By integrating modern trade policies and technology, Customs Indore continues to streamline operations, enhancing efficiency while ensuring compliance with international trade laws.    
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lower Body Part -->
+    <div class="lower-body">
+        <div class="box left-section quick-links-box">
+            <!-- <div class="title-box">
+                 <h3>Quick Links</h3>
+            </div> -->
+            <div class="quick-links">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Quick Links</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><a href="#">Directory-Customs Indore</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="#">Citizen Charter</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="documents/RTI-public-notice.pdf" target="_blank">RTI</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="#">Public Notices</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="#">Vigilence Awareness</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="box center-section">
+            <div class="image-slider">
+                <img src="images/slideshow/1.jpg" alt="Slider 1"  >
+                <img src="images/slideshow/2.JPG" alt="Slider 2">
+                <img src="images/slideshow/3.jpg" alt="Slider 3" >
+                <img src="images/slideshow/4.jpg" alt="Slider 4" >
+                <img src="images/slideshow/5.jpg" alt="Slider 5" >
+            </div>
+        </div>
+       
+        <div class="box right-section useful-links-box">
+            <div class="useful-links">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Useful Links</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><a href="https://enquiry.icegate.gov.in/enquiryatices/beTrackIces" target="_blank">Bill of Entry Enquiry</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="https://enquiry.icegate.gov.in/enquiryatices/sbTrack" target="_blank">Shipping Bill Enquiry</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="https://enquiry.icegate.gov.in/enquiryatices/ChallanEnquiry/CE" target="_blank">Challan Enquiry</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="https://www.old.icegate.gov.in/Webappl/Trade-Guide-on-Imports" target="_blank">Customs Duty Calculator</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="https://www.rbi.org.in/#mainsection" target="_blank">Exchange rate</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>  
+       
+    </div>
+
+    <!-- Footer Section -->
+<footer class="footer-wrapper">
+    <!-- Upper Footer Section (Image Slider) -->
+    <section class="wrapper carousel-wrapper">
+        <button class="arrow-left">&lt;</button>
+        <div class="container common-container carousel-container">
+            <a target="_blank" href="http://digitalindia.gov.in/" title="Digital India, External Link that opens in a new window">
+                <img src="images/footer/digital-india.png" alt="Digital India">
+            </a>
+            <a target="_blank" href="http://www.makeinindia.com/" title="Make In India, External Link that opens in a new window">
+                <img src="images/footer/makeinindia.png" alt="Make In India">
+            </a>
+            <a target="_blank" href="http://india.gov.in/" title="National Portal of India, External Link that opens in a new window">
+                <img src="images/footer/india-gov.png" alt="National Portal of India">
+            </a>
+            <a target="_blank" href="http://goidirectory.nic.in/" title="GOI Web Directory, External Link that opens in a new window">
+                <img src="images/footer/goidirectory.png" alt="GOI Web Directory">
+            </a>
+            <a target="_blank" href="https://data.gov.in/" title="Data portal, External Link that opens in a new window">
+                <img src="images/footer/data-gov.png" alt="Data portal">
+            </a>
+            <a target="_blank" href="https://mygov.in/" title="MyGov, External Link that opens in a new window">
+                <img src="images/footer/mygov.png" alt="MyGov Portal">
+            </a>
+            <a target="_blank" href="https://mygov.in/" title="World Customs Organization, External Link that opens in a new window">
+                <img src="images/footer/WCO.JPG" alt="World Customs Organization">
+            </a>
+            <a target="_blank" href="https://mygov.in/" title="World Customs Organization, External Link that opens in a new window">
+                <img src="images/footer/mci.png" alt="World Customs Organization">
+            </a>
+        </div>
+        <button class="arrow-right">&gt;</button>
+    </section>
+
+    <!-- Lower Footer Section -->
+    <div class="footer-bottom-wrapper">
+        <div class="footer-bottom-container">
+            <div class="footer-content">
+                <b> <strong>@2025 Indore Customs</strong> | Website Designed, Developed and Maintained by Indore Customs</b>
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
+<script>
+    document.querySelectorAll('.bottom-header ul li').forEach(item => {
+        item.addEventListener('mouseover', () => {
+            let dropdown = item.querySelector('.dropdown-content');
+            if (dropdown) {
+                dropdown.style.display = 'block';
+            }
+        });
+        item.addEventListener('mouseleave', () => {
+            let dropdown = item.querySelector('.dropdown-content');
+            if (dropdown) {
+                dropdown.style.display = 'none';
+            }
+        });
+    });
+</script>
+<script>
+    // Add functionality for arrows
+    document.querySelector('.arrow-left').addEventListener('click', function() {
+        const container = document.querySelector('.carousel-container');
+        container.style.animation = 'none'; // Stop current animation
+        container.style.transition = 'transform 0.5s ease-in-out';
+        const currentTransform = getComputedStyle(container).transform;
+        const transformValue = currentTransform === 'none' ? '0' : currentTransform.split(',')[4];
+        container.style.transform = `translateX(${parseInt(transformValue) + 200}px)`; // Move left
+        setTimeout(() => {
+            container.style.transition = 'none';
+            container.style.transform = `translateX(${parseInt(transformValue) + 200}px)`; // Reset position
+            container.style.animation = 'slide 40s linear infinite'; // Restart animation
+        }, 500); // Wait for transition to complete
+    });
+
+    document.querySelector('.arrow-right').addEventListener('click', function() {
+        const container = document.querySelector('.carousel-container');
+        container.style.animation = 'none'; // Stop current animation
+        container.style.transition = 'transform 0.5s ease-in-out';
+        const currentTransform = getComputedStyle(container).transform;
+        const transformValue = currentTransform === 'none' ? '0' : currentTransform.split(',')[4];
+        container.style.transform = `translateX(${parseInt(transformValue) - 200}px)`; // Move right
+        setTimeout(() => {
+            container.style.transition = 'none';
+            container.style.transform = `translateX(${parseInt(transformValue) - 200}px)`; // Reset position
+            container.style.animation = 'slide 40s linear infinite'; // Restart animation
+        }, 500); // Wait for transition to complete
+    });
+</script>
+<script>
+    // Banner Slideshow
+    let bannerIndex = 0;
+    const banners = document.querySelectorAll('.banner-slideshow img');
+    function showBanner() {
+        banners.forEach((banner, index) => {
+            banner.style.display = (index === bannerIndex) ? 'block' : 'none';
+        });
+        bannerIndex = (bannerIndex + 1) % banners.length;
+    }
+    setInterval(showBanner, 3000); // Change image every 3 seconds
+    showBanner();
+
+    // Image Slider
+    let sliderIndex = 0;
+    const sliders = document.querySelectorAll('.image-slider img');
+    function showSlider() {
+        sliders.forEach((slider, index) => {
+            slider.style.display = (index === sliderIndex) ? 'block' : 'none';
+        });
+        sliderIndex = (sliderIndex + 1) % sliders.length;
+    }
+    setInterval(showSlider, 1000); // Change image every 3 seconds
+    showSlider();
+</script>
+</body>
+</html>

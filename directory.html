@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Homepage</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Basic reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      color: #333;
+      padding: 20px;
+    }
+
+    /* Container */
+    .directory-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 5px;
+    }
+
+    /* Page Title */
+    h1 {
+      text-align: center;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      color: darkblue;
+    }
+
+    /* Search Bar */
+    .search-container {
+      text-align: right;
+      margin-bottom: 20px;
+    }
+
+    .search-container input {
+      padding: 8px;
+      width: 250px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    /* Section Titles */
+    .section-title {
+      margin-top: 30px;
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-decoration: underline;
+      color: darkblue;
+    }
+
+    /* Table Styles */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+      font-size: 0.95rem;
+    }
+
+    thead {
+      background-color: #f0f0f0;
+    }
+
+    th, td {
+      padding: 10px;
+      border: 1px solid #ccc;
+      vertical-align: top;
+      text-align: left;
+    }
+
+    th {
+      font-weight: bold;
+      background-color: lightgoldenrodyellow;
+      text-align: center;
+    }
+
+    /* Responsive Table */
+    @media (max-width: 768px) {
+      table, thead, tbody, th, td, tr {
+        display: block;
+        width: 100%;
+      }
+
+      thead tr {
+        display: none;
+      }
+
+      tr {
+        margin-bottom: 10px;
+      }
+
+      td {
+        border: none;
+        border-bottom: 1px solid #ccc;
+        position: relative;
+        padding-left: 50%;
+      }
+
+      td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 15px;
+        font-weight: bold;
+      }
+    }
+  </style>
+</head>
+<body>
+  <body>
+    <div class="webpage-container">
+      <!-- Load Upper Header -->
+      <div id="upper-header-placeholder"></div>
+      <!-- Load Lower Header -->
+      <div id="lower-header-placeholder"></div>
+      <!-- Load Marquee Section -->
+      <div id="marquee-placeholder"></div>
+      <!-- ===== Main Content Area ===== -->
+      <div class="container">
+        <!-- Load Sidebar -->
+        <div id="sidebar-placeholder"></div>
+        <div class="right-body">
+          <div class="directory-container">
+            <h1>Customs Directory</h1>
+          
+            <!-- Search Section -->
+            <div class="search-container">
+              <label for="searchInput">Search:</label>
+              <input type="text" id="searchInput" onkeyup="searchTables()" placeholder="Type to filter...">
+            </div>
+          
+            <!-- Head Quarter Section -->
+            <div class="section-title">Head Quarter</div>
+            <table id="hqTable">
+              <thead>
+                <tr>
+                  <th>S.No</th>
+                  <th>Name of the Officer</th>
+                  <th>Designation</th>
+                  <th>Present Place of Posting</th>
+                  <th>Phone</th>
+                  <th>Email</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-label="S.No">1</td>
+                  <td data-label="Name of the Officer">Rajeev Agarwal</td>
+                  <td data-label="Designation">Pr. Commissioner</td>
+                  <td data-label="Present Place of Posting">Customs, Indore</td>
+                  <td data-label="Phone">0731-2920251</td>
+                  <td data-label="Email">customs indore@gov.in</td>
+                </tr>
+                <tr>
+                  <td data-label="S.No">2</td>
+                  <td data-label="Name of the Officer">Dinesh K Bisen</td>
+                  <td data-label="Designation">Additional Commissioner</td>
+                  <td data-label="Present Place of Posting">Customs, Indore</td>
+                  <td data-label="Phone">0731-2920251</td>
+                  <td data-label="Email">customs indore@gov.in</td>
+                </tr>
+                <tr>
+                  <td data-label="S.No">3</td>
+                  <td data-label="Name of the Officer">KD Venkatraman</td>
+                  <td data-label="Designation">Assistant Commissioner</td>
+                  <td data-label="Present Place of Posting">
+                    Technical &amp; Policy;TRC; Statistics;Review &amp; Tribunal;<br>
+                    Legal &amp; Prosecution;Vigilance, Establishment &amp; Confidential;<br>
+                    CIU;CPGRAM &amp; SPARROW
+                  </td>
+                  <td data-label="Phone">0731-2920250</td>
+                  <td data-label="Email">k.dv.g038701@gov.in</td>
+                </tr>
+                <tr>
+                  <td data-label="S.No">4</td>
+                  <td data-label="Name of the Officer">Jasram Meena</td>
+                  <td data-label="Designation">Assistant Commissioner</td>
+                  <td data-label="Present Place of Posting">
+                    SIIB, AIU &amp; Disposal;Adjudication; PQ; Administration;Accounts;<br>
+                    Rajbhasha;CPIO; RTI, Computer &amp; Systems
+                  </td>
+                  <td data-label="Phone">0731-2920250</td>
+                  <td data-label="Email">jasramjm.g209401@gov.in</td>
+                </tr>
+              </tbody>
+            </table>
+          
+            <!-- Formation Section -->
+            <div class="section-title">Formation</div>
+            <table id="formationTable">
+              <thead>
+                <tr>
+                  <th>S.No</th>
+                  <th>Name of the Officer</th>
+                  <th>Designation</th>
+                  <th>Present Place of Posting</th>
+                  <th>Phone</th>
+                  <th>Email</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-label="S.No">1</td>
+                  <td data-label="Name of the Officer">Rajendra Kumar Swarnakar</td>
+                  <td data-label="Designation">Assistant Commissioner</td>
+                  <td data-label="Present Place of Posting">
+                    ICD Raipur with additonal charge FPO Raipur &amp; Circle Raipur
+                  </td>
+                  <td data-label="Phone">NA</td>
+                  <td data-label="Email">rajendra.swarnakar@gov.in</td>
+                </tr>
+                <tr>
+                  <td data-label="S.No">2</td>
+                  <td data-label="Name of the Officer">Jadav Jayesh Khodidas</td>
+                  <td data-label="Designation">Assistant Commissioner</td>
+                  <td data-label="Present Place of Posting">
+                    ICD Dhannad with additional charge of ICD Kheda &amp; Circle Ujjain
+                  </td>
+                  <td data-label="Phone">0731-2439072</td>
+                  <td data-label="Email">jayeshkj.g019101@gov.in</td>
+                </tr>
+                <tr>
+                  <td data-label="S.No">3</td>
+                  <td data-label="Name of the Officer">Nalin Kumar Jha</td>
+                  <td data-label="Designation">Assistant Commissioner</td>
+                  <td data-label="Present Place of Posting">
+                    ACC Indore and DABH Airport with additional charge of Customs Circle Indore
+                  </td>
+                  <td data-label="Phone">0731-2920237</td>
+                  <td data-label="Email">nalin.jha68@gov.in</td>
+                </tr>
+                <tr>
+                  <td data-label="S.No">4</td>
+                  <td data-label="Name of the Officer">Rajesh Nair</td>
+                  <td data-label="Designation">Assistant Commissioner</td>
+                  <td data-label="Present Place of Posting">
+                    ICD Tihi Audit Hqrs &amp; de-notified ICD Ratlam
+                  </td>
+                  <td data-label="Phone">0731-2437876</td>
+                  <td data-label="Email">rajeshgn.c099301@gov.in</td>
+                </tr>
+                <tr>
+                  <td data-label="S.No">5</td>
+                  <td data-label="Name of the Officer">Mithilesh Dwivedi</td>
+                  <td data-label="Designation">Assistant Commissioner</td>
+                  <td data-label="Present Place of Posting">ICD Malanpur</td>
+                  <td data-label="Phone">NA</td>
+                  <td data-label="Email">methileshd.g209401@gov.in</td>
+                </tr>
+                <tr>
+                  <td data-label="S.No">6</td>
+                  <td data-label="Name of the Officer">Ajay Kumar</td>
+                  <td data-label="Designation">Assistant Commissioner</td>
+                  <td data-label="Present Place of Posting">
+                    ICD Mandideep with addl. charge of ICD Powerkheda Customs Circle Bhopal and FPO Bhopal RBIA Bhopal and Customs Circle Jabalpur
+                  </td>
+                  <td data-label="Phone">0755-2990212</td>
+                  <td data-label="Email">ajaykumards.c019401@gov.in</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
+          <script>
+            /* 
+              A simple JavaScript function to search through both tables.
+              It hides table rows that do not match the search input.
+            */
+            function searchTables() {
+              const input = document.getElementById("searchInput");
+              const filter = input.value.toLowerCase();
+          
+              // List of table IDs to search
+              const tableIds = ["hqTable", "formationTable"];
+          
+              tableIds.forEach(tableId => {
+                const table = document.getElementById(tableId);
+                const trs = table.getElementsByTagName("tr");
+          
+                // Skip the header row (index 0)
+                for (let i = 1; i < trs.length; i++) {
+                  let rowText = trs[i].textContent.toLowerCase();
+                  if (rowText.indexOf(filter) > -1) {
+                    trs[i].style.display = "";
+                  } else {
+                    trs[i].style.display = "none";
+                  }
+                }
+              });
+            }
+          </script>
+          
+          </div>
+        </div>
+      </div>
+      <!-- Load Footer -->
+      <div id="footer-placeholder"></div>
+    </div>
+  
+    <!-- Include external JavaScript file -->
+    <script src="scripts.js"></script>
+    <script>
+      // Function to load external HTML into a placeholder
+      function loadHTML(url, placeholderId, callback) {
+        fetch(url)
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById(placeholderId).innerHTML = data;
+            if (callback) callback();
+          })
+          .catch(error => console.error('Error loading HTML:', error));
+      }
+      // Load upper-header, lower-header, marquee, footer, and sidebar
+      loadHTML('partials/upperheader.html', 'upper-header-placeholder');
+      loadHTML('partials/lowerheader.html', 'lower-header-placeholder', addDropdownListeners);
+      loadHTML('partials/footer.html', 'footer-placeholder');
+      loadHTML('partials/sidebar.html', 'sidebar-placeholder');
+      loadHTML('partials/marquee.html', 'marquee-placeholder');
+    </script>
+  </body>
+  </html>
+</body>
+</html>

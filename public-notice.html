@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Homepage</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="webpage-container">
+    <!-- Load Upper Header -->
+    <div id="upper-header-placeholder"></div>
+    <!-- Load Lower Header -->
+    <div id="lower-header-placeholder"></div>
+    <!-- Load Marquee Section -->
+    <div id="marquee-placeholder"></div>
+    <!-- ===== Main Content Area ===== -->
+    <div class="container">
+    <!-- Load Sidebar -->
+    <div id="sidebar-placeholder"></div>
+    <div class="right-body">
+        <h2>Work is under progress....</h2>
+    </div>
+  </div>
+    <!-- Load Footer -->
+    <div id="footer-placeholder"></div>
+  </div>
+
+  <!-- Include external JavaScript file -->
+  <script src="scripts.js"></script>
+  <script>
+    // Function to load external HTML into a placeholder
+    function loadHTML(url, placeholderId, callback) {
+      fetch(url)
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById(placeholderId).innerHTML = data;
+          if (callback) callback();
+        })
+        .catch(error => console.error('Error loading HTML:', error));
+    }
+    // Load upper-header, lower-header, marquee, footer, and sidebar
+    loadHTML('partials/upperheader.html', 'upper-header-placeholder');
+    loadHTML('partials/lowerheader.html', 'lower-header-placeholder', addDropdownListeners);
+    loadHTML('partials/footer.html', 'footer-placeholder');
+    loadHTML('partials/sidebar.html', 'sidebar-placeholder');
+    loadHTML('partials/marquee.html', 'marquee-placeholder');
+  </script>
+</body>
+</html>

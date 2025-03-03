@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customs Indore Administrative Setup</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', {packages:["orgchart"]});
+        google.charts.setOnLoadCallback(drawChart);
+
+        let expandedNodes = new Set();
+
+        function drawChart() {
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Name');
+            data.addColumn('string', 'Manager');
+            data.addColumn('string', 'ToolTip');
+
+            let rows = [
+                [{'v':'Ministry of Finance', 'f':'Ministry of Finance'}, '', 'Top-Level Authority'],
+                [{'v':'Department of Revenue', 'f':'Department of Revenue'}, 'Ministry of Finance', 'Handles revenue policies'],
+                [{'v':'CBIC', 'f':'Central Board of Indirect Taxes & Customs'}, 'Department of Revenue', 'Regulates Customs & GST'],
+                [{'v':'Chief Commissioner Bhopal Zone', 'f':'Chief Commissioner Bhopal Zone'}, 'CBIC', 'Oversees Bhopal Zone'],
+                [{'v':'Customs Indore', 'f':'Customs Indore'}, 'Chief Commissioner Bhopal Zone', 'Indore Customs Administration'],
+                
+                [{'v':'ICD', 'f':'<div class="clickable" onclick="toggleNode(\'ICD\')">ICD</div>'}, 'Customs Indore', 'Inland Container Depot'],
+                [{'v':'Circle', 'f':'<div class="clickable" onclick="toggleNode(\'Circle\')">Circle</div>'}, 'Customs Indore', 'Regulatory Divisions'],
+                [{'v':'Airport', 'f':'<div class="clickable" onclick="toggleNode(\'Airport\')">Airport</div>'}, 'Customs Indore', 'Airport Customs'],
+                [{'v':'FPO', 'f':'<div class="clickable" onclick="toggleNode(\'FPO\')">FPO</div>'}, 'Customs Indore', 'Foreign Post Office'],
+                [{'v':'SEZ', 'f':'<div class="clickable" onclick="toggleNode(\'SEZ\')">SEZ</div>'}, '', 'Special Economic Zone']
+            ];
+
+            if (expandedNodes.has('ICD')) {
+                rows.push(...[
+                    [{'v':'ICD_Tihi', 'f':'Tihi'}, 'ICD', ''],
+                    [{'v':'ICD_Dhannad', 'f':'Dhannad'}, 'ICD', ''],
+                    [{'v':'ICD_Malanpur', 'f':'Malanpur'}, 'ICD', ''],
+                    [{'v':'ICD_Mandideep', 'f':'Mandideep'}, 'ICD', ''],
+                    [{'v':'ICD_Raipur', 'f':'Raipur'}, 'ICD', ''],
+                    [{'v':'ICD_Kheda', 'f':'Kheda'}, 'ICD', ''],
+                    [{'v':'ICD_Powerkheda', 'f':'Powerkheda'}, 'ICD', '']
+                ]);
+            }
+            if (expandedNodes.has('Circle')) {
+                rows.push(...[
+                    [{'v':'Circle_Bhopal', 'f':'Bhopal'}, 'Circle', ''],
+                    [{'v':'Circle_Indore', 'f':'Indore'}, 'Circle', ''],
+                    [{'v':'Circle_Ujjain', 'f':'Ujjain'}, 'Circle', ''],
+                    [{'v':'Circle_Jabalpur', 'f':'Jabalpur'}, 'Circle', ''],
+                    [{'v':'Circle_Raipur', 'f':'Raipur'}, 'Circle', '']
+                ]);
+            }
+            if (expandedNodes.has('Airport')) {
+                rows.push(...[
+                    [{'v':'Airport_Indore', 'f':'Indore'}, 'Airport', ''],
+                    [{'v':'Airport_Bhopal', 'f':'Bhopal'}, 'Airport', ''],
+                    [{'v':'Airport_Chhatarpur', 'f':'Chhatarpur'}, 'Airport', '']
+                ]);
+            }
+            if (expandedNodes.has('FPO')) {
+                rows.push(...[
+                    [{'v':'FPO_Raipur', 'f':'Raipur'}, 'FPO', ''],
+                    [{'v':'FPO_Bhopal', 'f':'Bhopal'}, 'FPO', '']
+                ]);
+            }
+            if (expandedNodes.has('SEZ')) {
+                rows.push(...[
+                    [{'v':'SEZ_A', 'f':'SEZ-A'}, 'SEZ', ''],
+                    [{'v':'SEZ_B', 'f':'SEZ-B'}, 'SEZ', '']
+                ]);
+            }
+
+            data.addRows(rows);
+            var chart = new google.visualization.OrgChart(document.getElementById('orgchart'));
+            chart.draw(data, {'allowHtml':true});
+        }
+
+        function toggleNode(node) {
+            if (expandedNodes.has(node)) {
+                expandedNodes.delete(node);
+            } else {
+                expandedNodes.add(node);
+            }
+            drawChart();
+        }
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        #orgchart {
+            display: flex;
+            justify-content: center;
+        }
+        .clickable {
+            cursor: pointer;
+            color: blue;
+            text-decoration: underline;
+        }
+        h2:hover {
+            background-color: darkblue;
+            color: black;
+            padding: 10px;
+            display: inline-block;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Customs Indore Administrative Setup</h2>
+    <div id="orgchart"></div>
+</body>
+</html>

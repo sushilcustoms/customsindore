@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Homepage</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+  .custom-right-body {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .custom-right-upper, .custom-right-lower {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  .custom-right-upper-left, .custom-right-upper-right,
+  .custom-right-lower-left, .custom-right-lower-right {
+    width: 48%;
+    background: #f8f8f8;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .commissioner-photo {
+    display: block;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin: 0 auto;
+    border-radius: 50%;
+  }
+  
+  .commissioner-name {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 10px;
+  }
+  
+  .commissioner-designation {
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .commissioner-message {
+    text-align: justify;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-top: 10px;
+  }
+
+</style>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Arial, sans-serif; }
+  .gallery-container {
+      width: 100%; /* Adjust the size as needed */
+      max-width: 100%;
+      margin: 0;
+      border: 2px solid #ccc;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      background-color: lightseagreen;
+  }
+  .gallery-header {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: darkblue;
+      text-transform: uppercase;
+  }
+  .gallery-header::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: darkblue;
+      margin-top: 5px;
+  }
+  .slider-container { 
+      position: relative; 
+      width: 100%; 
+      overflow: hidden; 
+      max-height: 300px;
+      border-radius: 5px;
+      background-color: offwhite;
+      padding: 10px;
+  }
+  .slides {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+  }
+  .slide {
+      flex: 0 0 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  .slide img {
+      width: 100%;
+      height: auto;
+      max-height: 300px;
+      object-fit: cover;
+      cursor: pointer;
+      transition: transform 0.3s;
+  }
+  .slide img:hover {
+      transform: scale(1.1);
+  }
+  .prev, .next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      font-size: 18px;
+  }
+  .prev { left: 10px; }
+  .next { right: 10px; }
+</style>  
+<style>
+  .custom-banner-slider {
+      position: relative;
+      width: 100%;
+      max-width: 800px;
+      margin: auto;
+      overflow: hidden;
+  }
+  .custom-banner-slides {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+  }
+  .custom-banner-slide {
+      min-width: 100%;
+      box-sizing: border-box;
+  }
+  .custom-banner-slide img {
+      width: 100%;
+      display: block;
+  }
+  .custom-banner-prev, .custom-banner-next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+  }
+  .custom-banner-prev { left: 10px; }
+  .custom-banner-next { right: 10px; }
+  .custom-banner-dots {
+      text-align: center;
+      margin-top: 10px;
+  }
+  .custom-banner-dot {
+      height: 10px;
+      width: 10px;
+      margin: 0 5px;
+      background-color: gray;
+      border-radius: 50%;
+      display: inline-block;
+      cursor: pointer;
+  }
+  .custom-banner-dot.active {
+      background-color: black;
+  }
+</style>
+</head>
+<body>
+  <div class="webpage-container">
+    <!-- Load Upper Header -->
+    <div id="upper-header-placeholder"></div>
+    <!-- Load Lower Header -->
+    <div id="lower-header-placeholder"></div>
+    <!-- Load Marquee Section -->
+    <div id="marquee-placeholder"></div>
+    
+    <!-- ===== Main Content Area ===== -->
+    <div class="container">
+      <!-- Load Sidebar -->
+      <div id="sidebar-placeholder"></div>
+      
+      <!-- Right Body Section -->
+      <div class="custom-right-body">
+        <!-- Upper Right Section -->
+        <div class="custom-right-upper">
+          <div class="custom-right-upper-left">
+            <img src="images/body-images/commr.jpg" alt="Commissioner Photo" class="commissioner-photo">
+            <h3 class="commissioner-name">[Shri Rajeev Agarwal]</h3>
+            <p class="commissioner-designation">Pr. Commissioner of Customs, Indore</p>
+            <p class="commissioner-message">
+              Welcome to the official website of Customs Indore, a crucial step towards transparency, efficiency, and seamless trade facilitation. As part of the Central Board of Indirect Taxes and Customs (CBIC), Ministry of Finance, we are committed to revenue collection, trade facilitation, and law enforcement with integrity and excellence. Covering the vast jurisdictions of Madhya Pradesh and Chhattisgarh, we oversee Inland Container Depots (ICDs), Air Cargo complexes, and Devi Ahilyabai Holkar International Airport, Indore, ensuring the smooth flow of trade while vigilantly preventing smuggling and illicit activities.
+              This website serves as a digital gateway to our services, offering easy access to policies, procedures, and real-time updates. With digital initiatives like ICEGATE, we are driving a paperless, efficient customs system aligned with the Ease of Doing Business vision. Our dedicated team is committed to fostering a secure, trade-friendly, and technology-driven ecosystem that strengthens India’s economic growth.
+              I encourage all stakeholders to explore and utilize this platform, reinforcing our collective mission of efficiency, compliance, and national security. Together, let us build a progressive and robust customs framework that upholds the spirit of a self-reliant and prosperous India.
+             <strong>Jai Hind!!!</strong>
+              
+            </p>
+          </div>
+          <div class="custom-right-upper-right">
+            <div class="custom-banner-slider">
+              <div class="custom-banner-slides">
+                  <div class="custom-banner-slide"><img src="images/banner/banner-1.jpg"></div>
+                  <div class="custom-banner-slide"><img src="images/banner/banner-2.jpeg"></div>
+                  <div class="custom-banner-slide"><img src="images/banner/banner-3.jpg"></div>
+                  <div class="custom-banner-slide"><img src="images/banner/banner-4.jpg"></div>
+                  <div class="custom-banner-slide"><img src="images/banner/banner-5.jpg"></div>
+                  <div class="custom-banner-slide"><img src="images/banner/banner-6.jpg"></div>
+                </div>
+              <button class="custom-banner-prev" onclick="moveSlide(-1)">&#10094;</button>
+              <button class="custom-banner-next" onclick="moveSlide(1)">&#10095;</button>
+          </div>
+          <div class="custom-banner-dots" id="customBannerDots"></div>
+          <script>
+              let currentIndex = 0;
+              const slides = document.querySelectorAll(".custom-banner-slide");
+              const dotsContainer = document.getElementById("customBannerDots");
+              
+              slides.forEach((_, index) => {
+                  const dot = document.createElement("span");
+                  dot.classList.add("custom-banner-dot");
+                  dot.addEventListener("click", () => moveToSlide(index));
+                  dotsContainer.appendChild(dot);
+              });
+              
+              function updateDots() {
+                  document.querySelectorAll(".custom-banner-dot").forEach((dot, index) => {
+                      dot.classList.toggle("active", index === currentIndex);
+                  });
+              }
+              
+              function moveSlide(step) {
+                  currentIndex = (currentIndex + step + slides.length) % slides.length;
+                  updateSlider();
+              }
+              
+              function moveToSlide(index) {
+                  currentIndex = index;
+                  updateSlider();
+              }
+              
+              function updateSlider() {
+                  document.querySelector(".custom-banner-slides").style.transform = `translateX(-${currentIndex * 100}%)`;
+                  updateDots();
+              }
+              
+              updateSlider();
+              setInterval(() => moveSlide(1), 5000);
+          </script>
+          </div>
+        </div>
+
+        <!-- Lower Right Section -->
+        <div class="custom-right-lower">
+          <div class="custom-right-lower-left">
+            <div class="gallery-container">
+              <div class="gallery-header">Photo Gallery</div>
+              <div class="slider-container" onmouseover="pauseSlide()" onmouseout="resumeSlide()">
+                  <div class="slides">
+                      <div class="slide"><img src="images/slideshow/1.jpg" alt="Image 1" onclick="enlargeImage(this)"></div>
+                      <div class="slide"><img src="images/slideshow/2.JPG" alt="Image 2" onclick="enlargeImage(this)"></div>
+                      <div class="slide"><img src="images/slideshow/3.jpg" alt="Image 3" onclick="enlargeImage(this)"></div>
+                      <div class="slide"><img src="images/slideshow/4.JPG" alt="Image 4" onclick="enlargeImage(this)"></div>
+                      <div class="slide"><img src="images/slideshow/5.jpg" alt="Image 5" onclick="enlargeImage(this)"></div>
+                      <div class="slide"><img src="images/slideshow/6.JPG" alt="Image 6" onclick="enlargeImage(this)"></div>
+                      <div class="slide"><img src="images/slideshow/7.jpeg" alt="Image 7" onclick="enlargeImage(this)"></div>
+                  </div>
+                  <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+                  <button class="next" onclick="moveSlide(1)">&#10095;</button>
+              </div>
+          </div>
+          <script>
+              let index = 0;
+              let interval;
+              function moveSlide(step) {
+                  const slides = document.querySelector('.slides');
+                  const totalSlides = document.querySelectorAll('.slide').length;
+                  index = (index + step + totalSlides) % totalSlides;
+                  slides.style.transform = `translateX(${-index * 100}%)`;
+              }
+              function startSlide() {
+                  interval = setInterval(() => moveSlide(1), 3000);
+              }
+              function pauseSlide() {
+                  clearInterval(interval);
+              }
+              function resumeSlide() {
+                  startSlide();
+              }
+              function enlargeImage(img) {
+                  let modal = document.createElement("div");
+                  modal.style.position = "fixed";
+                  modal.style.top = "0";
+                  modal.style.left = "0";
+                  modal.style.width = "100%";
+                  modal.style.height = "100%";
+                  modal.style.backgroundColor = "rgba(0,0,0,0.8)";
+                  modal.style.display = "flex";
+                  modal.style.justifyContent = "center";
+                  modal.style.alignItems = "center";
+                  modal.onclick = () => document.body.removeChild(modal);
+                  let enlargedImg = document.createElement("img");
+                  enlargedImg.src = img.src;
+                  enlargedImg.style.maxWidth = "90%";
+                  enlargedImg.style.maxHeight = "90%";
+                  modal.appendChild(enlargedImg);
+                  document.body.appendChild(modal);
+              }
+              startSlide();
+          </script>
+          </div>
+          <div class="custom-right-lower-right">
+            <h3>Customs Indore: Guardians of Economic Integrity & National Security</h3>
+            <p>Customs Indore stands as a pillar of excellence, safeguarding India’s economic frontiers with unwavering commitment and efficiency. Covering the vast jurisdictions of Madhya Pradesh and Chhattisgarh, it plays a pivotal role in trade facilitation, anti-smuggling operations, and enforcement of laws that protect national interests. With cutting-edge technology and a highly skilled workforce, Customs Indore ensures seamless import-export procedures, boosting India’s global trade competitiveness.
+              The department is not just about taxation—it is a sentinel of national security, preventing the inflow of contraband, narcotics, and illegal goods. Its proactive vigilance and intelligence-driven operations have consistently upheld the integrity of our borders. Customs Indore also promotes the Ease of Doing Business by streamlining procedures, enhancing transparency, and supporting businesses in compliance with international standards.
+              Beyond enforcement, Customs Indore actively participates in community outreach, environmental sustainability, and public awareness programs, reflecting its commitment to national development. As the custodian of trade across Madhya Pradesh and Chhattisgarh, it ensures lawful commerce, economic growth, and national security. With its progressive vision and steadfast duty, Customs Indore stands as a beacon of excellence, making every Indian proud of its unparalleled contribution to the nation’s prosperity. 
+              </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Load Footer -->
+    <div id="footer-placeholder"></div>
+  </div>
+
+  <!-- Include external JavaScript file -->
+  <script src="scripts.js"></script>
+  <script>
+    // Function to load external HTML into a placeholder
+    function loadHTML(url, placeholderId, callback) {
+      fetch(url)
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById(placeholderId).innerHTML = data;
+          if (callback) callback();
+        })
+        .catch(error => console.error('Error loading HTML:', error));
+    }
+
+    // Load upper-header, lower-header, marquee, footer, and sidebar
+    loadHTML('partials/upperheader.html', 'upper-header-placeholder');
+    loadHTML('partials/lowerheader.html', 'lower-header-placeholder', addDropdownListeners);
+    loadHTML('partials/footer.html', 'footer-placeholder');
+    loadHTML('partials/sidebar.html', 'sidebar-placeholder');
+    loadHTML('partials/marquee.html', 'marquee-placeholder');
+  </script>
+</body>
+</html>

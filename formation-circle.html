@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Homepage</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+   body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+    }
+    h2 {
+      text-align: center;
+      font-weight: bold;
+      color: darkblue;
+      margin-top: 20px; /* Adjusts distance from top */
+      margin-bottom: 30px; /* Adds space before accordion */
+    }
+    .accordion {
+      width: 80%; /* Adjusts width of the accordion */
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      overflow: hidden;
+      margin: 0 auto;
+    }
+    .accordion-item {
+      border-bottom: 1px solid #ddd;
+    }
+    .accordion-header {
+      background: lightblue;
+      padding: 15px;
+      cursor: pointer;
+      font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.3s ease;
+      border-radius: 5px;
+      margin: 5px;
+      text-align: center;
+      font-size: 16px;
+    }
+    .accordion-header:hover {
+      background: darkblue;
+      color: white;
+      transform: scale(1.05);
+      font-size: 18px;
+    }
+    .accordion-content {
+      display: none;
+      padding: 15px;
+      background: #f9f9f9;
+      border-radius: 5px;
+    }
+    .map-container {
+      width: 100%;
+      height: 300px;
+      margin-top: 10px;
+    }
+  </style>
+  <script>
+    function toggleAccordion(id) {
+      let selectedContent = document.getElementById(id);
+      if (selectedContent.style.display === "block") {
+        selectedContent.style.display = "none";
+      } else {
+        let contents = document.getElementsByClassName("accordion-content");
+        for (let i = 0; i < contents.length; i++) {
+          contents[i].style.display = "none";
+        }
+        selectedContent.style.display = "block";
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="webpage-container">
+    <!-- Load Upper Header -->
+    <div id="upper-header-placeholder"></div>
+    <!-- Load Lower Header -->
+    <div id="lower-header-placeholder"></div>
+    <!-- Load Marquee Section -->
+    <div id="marquee-placeholder"></div>
+    
+    <!-- ===== Main Content Area ===== -->
+    <div class="container">
+      <!-- Load Sidebar -->
+      <div id="sidebar-placeholder"></div>
+      <div class="right-body">
+        <!-- Accordion Section -->
+        <div class="accordion">
+            <h2>Customs Indore Jurisdiction-Circle</h2>
+          <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion('div1')">Circle Bhopal</div>
+            <div id="div1" class="accordion-content">
+              <p><strong>AC Name:</strong> Nalin Jha</p>
+              <p><strong>Email:</strong> fastysushil@gmail.com</p>
+              <p><strong>Phone:</strong> 8007627282</p>
+              <p><strong>Address:</strong> Pithampur</p>
+              <iframe class="map-container" src="https://www.google.com/maps?q=Bhopal+India&output=embed"></iframe>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion('div2')">Circle Indore</div>
+            <div id="div2" class="accordion-content">
+              <p>Details for Circle Indore</p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion('div3')">Circle Ujjain</div>
+            <div id="div3" class="accordion-content">
+              <p>Details for Circle Ujjain</p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion('div4')">Circle Jabalpur</div>
+            <div id="div4" class="accordion-content">
+              <p>Details for Circle Jabalpur</p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion('div5')">Circle Raipur</div>
+            <div id="div5" class="accordion-content">
+              <p>Details for Circle Raipur</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+        <!-- Load Footer -->
+    <div id="footer-placeholder"></div>
+  </div>
+  
+  <!-- Include external JavaScript file -->
+  <script src="scripts.js"></script>
+  
+  <script>
+    // Function to load external HTML into a placeholder
+    function loadHTML(url, placeholderId, callback) {
+      fetch(url)
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById(placeholderId).innerHTML = data;
+          if (callback) callback();
+        })
+        .catch(error => console.error('Error loading HTML:', error));
+    }
+    // Load upper-header, lower-header, marquee, footer, and sidebar
+    loadHTML('partials/upperheader.html', 'upper-header-placeholder');
+    loadHTML('partials/lowerheader.html', 'lower-header-placeholder', addDropdownListeners);
+    loadHTML('partials/footer.html', 'footer-placeholder');
+    loadHTML('partials/sidebar.html', 'sidebar-placeholder');
+    loadHTML('partials/marquee.html', 'marquee-placeholder');
+  </script>
+</body>
+</html>

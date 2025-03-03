@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customs Indore Jurisdiction</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        h2 { text-align: center; font-weight: bold; color: darkblue; }
+        .accordion { width: 100%; border: 1px solid #ccc; border-radius: 5px; overflow: hidden; }
+        .accordion-item { border-bottom: 1px solid #ddd; }
+        .accordion-header {
+            background: lightblue;
+            padding: 15px;
+            cursor: pointer;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            border-radius: 5px;
+            margin: 5px;
+            text-align: center;
+            font-size: 16px;
+        }
+        .accordion-header:hover {
+            background: darkblue;
+            color: white;
+            transform: scale(1.05);
+            font-size: 18px;
+        }
+        .accordion-content { 
+            display: none; 
+            padding: 15px; 
+            background: #f9f9f9;
+            border-radius: 5px;
+        }
+        .map-container { width: 100%; height: 300px; margin-top: 10px; }
+    </style>
+    <script>
+        function toggleAccordion(id) {
+            let selectedContent = document.getElementById(id);
+            if (selectedContent.style.display === "block") {
+                selectedContent.style.display = "none";
+            } else {
+                let contents = document.getElementsByClassName("accordion-content");
+                for (let i = 0; i < contents.length; i++) {
+                    contents[i].style.display = "none";
+                }
+                selectedContent.style.display = "block";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>Customs Indore Jurisdiction</h2>
+    <div class="accordion">
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion('div1')">Bhopal Division I</div>
+            <div id="div1" class="accordion-content">
+                <p><strong>AC Name:</strong> Utsav Prasar</p>
+                <p><strong>Email:</strong> p.utsav88@gov.in</p>
+                <p><strong>Phone:</strong> 0755-2761620 (O), 0755-2558560 (F)</p>
+                <p><strong>Address:</strong> Block-2, Paryawas Bhawan Administrative Area, Arera Hills, Bhopal.</p>
+                <iframe class="map-container" src="https://www.google.com/maps?q=Bhopal+India&output=embed"></iframe>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion('div2')">Bhopal Division II</div>
+            <div id="div2" class="accordion-content">
+                <p>Details for Bhopal Division II.</p>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion('div3')">Indore Division</div>
+            <div id="div3" class="accordion-content">
+                <p>Details for Indore Division.</p>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion('div4')">Gwalior Division</div>
+            <div id="div4" class="accordion-content">
+                <p>Details for Gwalior Division.</p>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion('div5')">Jabalpur Division</div>
+            <div id="div5" class="accordion-content">
+                <p>Details for Jabalpur Division.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

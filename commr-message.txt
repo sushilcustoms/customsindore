@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commissioner Message</title>
+    <style>
+        .message-box {
+            width: 25%;
+            border: 2px solid #004080;
+            border-radius: 10px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            font-size: 18px;
+            font-weight: bold;
+            background-color: #004080;
+            color: white;
+            padding: 8px;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+        }
+        .content {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+        }
+        .photo {
+            width: 80px;
+            height: 100px;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+        .message {
+            margin-top: 10px;
+            font-size: 12px;
+            color: #555;
+            text-align: justify;
+        }
+        .details {
+            font-size: 14px;
+            font-weight: bold;
+            color: #333;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="message-box">
+        <div class="header">Pr. Commissioner Message</div>
+        <div class="content">
+            <img src="commissioner.jpg" alt="Commissioner Photo" class="photo">
+        </div>
+        <div class="message">
+            Welcome message from the Commissioner goes here. This can be a brief paragraph explaining key initiatives, goals, or greetings to the public.
+        </div>
+        <div class="details">Shri [Commissioner Name]</div>
+    </div>
+</body>
+</html>

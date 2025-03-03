@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About Us</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+     .right-body {
+        flex: 1;
+        padding: 10px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .about_container {
+        width: 100%;
+        max-width: 800px; /* Content width limit */
+        margin: auto;
+    }
+    .box {
+        background-color: white;
+        padding: 15px;
+        margin: 10px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+    }
+    .content {
+        display: none;
+        text-align: left;
+        padding-top: 10px;
+    }
+    h3 {
+     background-color: lightskyblue;
+      padding: 5px;
+      color: darkblue;
+      border-radius: 1px;
+
+    }
+  </style>
+</head>
+<body>
+  <div class="webpage-container">
+    <div id="upper-header-placeholder"></div>
+    <div id="lower-header-placeholder"></div>
+    <div id="marquee-placeholder"></div>
+
+    <div style="display: flex;">
+      <div id="sidebar-placeholder"></div>
+    
+      <div class="right-body">
+        <div class="about_container">
+          <div class="box" onclick="toggleContent('history')">
+            <h3>History</h3>
+            <div id="history" class="content">
+              <p>The Office of the Commissioner of Customs in Indore was established on January 15, 2018, as a subordinate office to the Central Board of Indirect Taxes and Customs (CBIC). 
+                This establishment reflects Indore's growing significance in trade and commerce, necessitating a dedicated customs administration to manage and facilitate international trade operations in the region.</p>
+            </div>
+          </div>
+          <div class="box" onclick="toggleContent('vision')">
+            <h3>Vision</h3>
+            <div id="vision" class="content">
+              <p>Partnering in India’s socio-economic growth by formulating...</p>
+            </div>
+          </div>
+          <div class="box" onclick="toggleContent('mission')">
+            <h3>Mission</h3>
+            <div id="mission" class="content">
+              <ul>
+                <li>Simple and predictable</li>
+                <li>Fair and just</li>
+                <li>Transparent</li>
+                <li>Technology-driven</li>
+              </ul>
+            </div>
+          </div>
+          <div class="box" onclick="toggleContent('commitment')">
+            <h3>Our Commitment</h3>
+            <div id="commitment" class="content">
+              <ul>
+                <li>To encourage voluntary compliance</li>
+                <li>To educate citizens about indirect tax laws</li>
+                <li>To continuously enhance service delivery standards</li>
+                <li>To promote a consultative and collaborative environment</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div id="footer-placeholder"></div>
+  </div>
+  
+  <script>
+    function toggleContent(id) {
+      var content = document.getElementById(id);
+      if (content.style.display === "block") {
+        content.style.display = "none";
+      } else {
+        content.style.display = "block";
+      }
+    }
+  </script>
+  <script src="scripts.js"></script>
+  <script>
+    // Function to load external HTML into a placeholder
+    function loadHTML(url, placeholderId, callback) {
+      fetch(url)
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById(placeholderId).innerHTML = data;
+          if (callback) callback();
+        })
+        .catch(error => console.error('Error loading HTML:', error));
+    }
+    // Load upper-header, lower-header, marquee, footer, and sidebar
+    loadHTML('partials/upperheader.html', 'upper-header-placeholder');
+    loadHTML('partials/lowerheader.html', 'lower-header-placeholder', addDropdownListeners);
+    loadHTML('partials/footer.html', 'footer-placeholder');
+    loadHTML('partials/sidebar.html', 'sidebar-placeholder');
+    loadHTML('partials/marquee.html', 'marquee-placeholder');
+  </script>
+</body>
+</html>

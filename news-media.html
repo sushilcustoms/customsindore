@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Homepage</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+    .right-body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 15px;
+      box-sizing: border-box;
+    }
+    .gallery-section {
+        margin: 20px auto;
+        max-width: 800px;
+    }
+    h2 {
+        background-color: #004080;
+        color: white;
+        padding: 10px;
+        border-radius: 5px;
+    }
+    .gallery-section {
+      width: 100%;
+      margin: 20px 0;
+    }
+    .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;  
+    }
+    .gallery img {
+        width: 100%;
+        max-width: 200px;
+        height: auto;
+        object-fit: cover;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: transform 0.3s;
+        margin: 5px 0;
+    }
+    .gallery img:hover {
+        transform: scale(1.1);
+    }
+    .lightbox {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        justify-content: center;
+        align-items: center;
+    }
+    .lightbox img {
+        max-width: 90%;
+        max-height: 80%;
+        border-radius: 10px;
+    }
+    .lightbox:target {
+        display: flex;
+    }
+    #sidebar-placeholder {
+        border: none; /* Ensure no border is applied */
+        margin: 0; /* Ensure no margin is applied */
+        padding: 0; /* Ensure no padding is applied */
+    }
+    .container {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+  </style>
+</head>
+<body>
+  <div class="webpage-container">
+    <!-- Load Upper Header -->
+    <div id="upper-header-placeholder"></div>
+    <!-- Load Lower Header -->
+    <div id="lower-header-placeholder"></div>
+    <!-- Load Marquee Section -->
+    <div id="marquee-placeholder"></div>
+    <!-- ===== Main Content Area ===== -->
+    <div class="container">
+      <!-- Load Sidebar -->
+      <div id="sidebar-placeholder"></div>
+      <div class="right-body">
+        <h1>Photo Gallery</h1>
+
+        <div class="gallery-section">
+          <h2>Swachhta Photos</h2>
+          <div class="gallery">
+            <a href="#img1"><img src="swachhta1.jpg" alt="Swachhta Photo 1"></a>
+            <a href="#img2"><img src="swachhta2.jpg" alt="Swachhta Photo 2"></a>
+            <a href="#img3"><img src="swachhta3.jpg" alt="Swachhta Photo 3"></a>
+            <a href="#img4"><img src="swachhta4.jpg" alt="Swachhta Photo 4"></a>
+            <a href="#img5"><img src="swachhta5.jpg" alt="Swachhta Photo 5"></a>
+          </div>
+        </div>
+
+        <div class="gallery-section">
+          <h2>Republic Day Photos</h2>
+          <div class="gallery">
+            <a href="#img6"><img src="republic1.jpg" alt="Republic Day Photo 1"></a>
+            <a href="#img7"><img src="republic2.jpg" alt="Republic Day Photo 2"></a>
+            <a href="#img8"><img src="republic3.jpg" alt="Republic Day Photo 3"></a>
+          </div>
+        </div>
+
+        <div class="gallery-section">
+          <h2>15th August Photos</h2>
+          <div class="gallery">
+            <a href="#img9"><img src="august1.jpg" alt="15th August Photo 1"></a>
+            <a href="#img10"><img src="august2.jpg" alt="15th August Photo 2"></a>
+          </div>
+        </div>
+
+        <div class="gallery-section">
+          <h2>International Customs Day Photos</h2>
+          <div class="gallery">
+            <a href="#img11"><img src="customs1.jpg" alt="Customs Day Photo 1"></a>
+            <a href="#img12"><img src="customs2.jpg" alt="Customs Day Photo 2"></a>
+          </div>
+        </div>
+
+        <div id="img1" class="lightbox">
+          <img src="swachhta1.jpg" alt="Swachhta Photo 1">
+        </div>
+        <div id="img2" class="lightbox">
+          <img src="swachhta2.jpg" alt="Swachhta Photo 2">
+        </div>
+        <div id="img3" class="lightbox">
+          <img src="swachhta3.jpg" alt="Swachhta Photo 3">
+        </div>
+        <div id="img4" class="lightbox">
+          <img src="swachhta4.jpg" alt="Swachhta Photo 4">
+        </div>
+        <div id="img5" class="lightbox">
+          <img src="swachhta5.jpg" alt="Swachhta Photo 5">
+        </div>
+        <div id="img6" class="lightbox">
+          <img src="republic1.jpg" alt="Republic Day Photo 1">
+        </div>
+        <div id="img7" class="lightbox">
+          <img src="republic2.jpg" alt="Republic Day Photo 2">
+        </div>
+        <div id="img8" class="lightbox">
+          <img src="republic3.jpg" alt="Republic Day Photo 3">
+        </div>
+        <div id="img9" class="lightbox">
+          <img src="august1.jpg" alt="15th August Photo 1">
+        </div>
+        <div id="img10" class="lightbox">
+          <img src="august2.jpg" alt="15th August Photo 2">
+        </div>
+        <div id="img11" class="lightbox">
+          <img src="customs1.jpg" alt="Customs Day Photo 1">
+        </div>
+        <div id="img12" class="lightbox">
+          <img src="customs2.jpg" alt="Customs Day Photo 2">
+        </div>
+      </div>
+    </div>
+    <!-- Load Footer -->
+    <div id="footer-placeholder"></div>
+  </div>
+
+  <!-- Include external JavaScript file -->
+  <script src="scripts.js"></script>
+  <script>
+    // Function to load external HTML into a placeholder
+    function loadHTML(url, placeholderId, callback) {
+      fetch(url)
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById(placeholderId).innerHTML = data;
+          if (callback) callback();
+        })
+        .catch(error => console.error('Error loading HTML:', error));
+    }
+    // Load upper-header, lower-header, marquee, footer, and sidebar
+    loadHTML('partials/upperheader.html', 'upper-header-placeholder');
+    loadHTML('partials/lowerheader.html', 'lower-header-placeholder', addDropdownListeners);
+    loadHTML('partials/footer.html', 'footer-placeholder');
+    loadHTML('partials/sidebar.html', 'sidebar-placeholder');
+    loadHTML('partials/marquee.html', 'marquee-placeholder');
+  </script>
+</body>
+</html>

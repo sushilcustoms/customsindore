@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Left Sidebar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        .sidebar-section {
+            width: 250px;
+            background-color: #f8f9fa; /* Off-white background color */
+            color: #0d47a1; /* Very dark blue text color */
+            height: 100vh;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+        }
+        .nav-links {
+            list-style: none;
+            padding: 0;
+        }
+        .section-main-title {
+            text-transform: uppercase;
+            font-size: 14px;
+            margin-bottom: 8px;
+            padding: 8px;
+            border: 2px solid #0d47a1;
+            border-radius: 5px;
+            text-align: center;
+            color: #0d47a1;
+            font-weight: bold;
+            background-color: #e3f2fd;
+        }
+        .nav-links li {
+            padding: 5px 0;
+        }
+        .nav-links a {
+            background-color: #4fc3f7;
+            padding: 8px;
+            border-radius: 5px;
+            color: #0d47a1;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            transition: background 0.3s, transform 0.2s;
+        }
+        .nav-links img {
+            width: 20px;
+            margin-right: 8px;
+            filter: brightness(0) invert(1);
+        }
+        .nav-links a:hover {
+            background-color: #29b6f6;
+            color: #0d47a1;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar-section">
+        <ul class="nav-links card-links">
+            <h6 class="section-main-title">Applications And Websites</h6>
+            <li><a href="#"><img src="./cbecfiles/newui/images/mingcute_performance-line.svg"> AAKALAN</a></li>
+            <li><a href="https://www.cbic.gov.in" target="_blank"><img src="./cbecfiles/newui/images/cbic.svg"> CBIC</a></li>
+            <li><a href="https://esanchar.cbic.gov.in/DGARM/Login" target="_blank"><img src="./cbecfiles/newui/images/dgramfeedback.svg"> DGARM Feedback</a></li>
+            <li><a href="https://esanchar.cbic.gov.in/DIN/Login" target="_blank"><img src="./cbecfiles/newui/images/dingeneration.svg"> DIN GENERATION</a></li>
+            <li><a href="https://saccess.nic.in/" target="_blank"><img src="./cbecfiles/newui/images/eoffice.svg"> E-OFFICE</a></li>
+            <li><a href="https://esanchar.cbic.gov.in/MPR/Login" target="_blank"><img src="./cbecfiles/newui/images/keyperfomance.svg"> KEY PERFORMANCE INDICATORS</a></li>
+            <li><a href="https://pfms.nic.in/NewDefaultHome.aspx" target="_blank"><img src="./cbecfiles/newui/images/pfms.svg"> PFMS</a></li>
+            <li><a href="https://esanchar.cbic.gov.in/RAKSHIT/Login" target="_blank"><img src="./cbecfiles/newui/images/rakshit.svg"> RAKSHIT</a></li>
+            <li><a href="https://saksham.cbic.gov.in/" target="_blank"><img src="./cbecfiles/newui/images/saksham.svg"> SAKSHAM DASHBOARD</a></li>
+            <li><a href="https://parichay.nic.in/Accounts/NIC/index.html?service=SPARROW" target="_blank"><img src="./cbecfiles/newui/images/sparrow.svg"> SPARROW - GROUP A</a></li>
+            <li><a href="https://edgevpn.rcil.gov.in/" target="_blank"><img src="./cbecfiles/newui/images/sparrowothers.svg"> SPARROW - OTHERS</a></li>
+            <li><a href="https://taxinformation.cbic.gov.in/" target="_blank"><img src="./cbecfiles/newui/images/taxinfo.svg"> TAX INFORMATION PORTAL</a></li>
+        </ul>
+    </div>
+</body>
+</html>
