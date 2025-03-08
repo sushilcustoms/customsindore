@@ -21,9 +21,9 @@
         color: darkblue;
         font-weight: bold;
         padding: 10px;
-        text-align: center;
-        border-radius: 5px;
-        margin-bottom: 10px;
+        /* text-align: center; */
+        /* border-radius: 5px;
+        margin-bottom: 10px; */
     }
     .commissioner-message {
         max-height: 150px;
@@ -98,15 +98,6 @@
         margin: 10px 0;
         border-radius: 5px;
         background: #f9f9f9;
-    }
-    .header {
-        background: lightblue;
-        color: darkblue;
-        font-weight: bold;
-        padding: 10px;
-        text-align: center;
-        border-radius: 5px;
-        margin-bottom: 10px;
     }
     .commissioner-info {
         display: flex;
@@ -203,15 +194,6 @@
         border-radius: 5px;
         background: #f9f9f9;
     }
-    .header {
-        background: lightblue;
-        color: darkblue;
-        font-weight: bold;
-        padding: 10px;
-        text-align: center;
-        border-radius: 5px;
-        margin-bottom: 10px;
-    }
     .content {
         display: flex;
         align-items: center;
@@ -252,13 +234,13 @@
     .flex-container {
         display: flex;
         justify-content: space-between;
-        gap: 100px;
+        gap: 5px;
     }
     .box {
         width: 50%;
-        /* border: 1px solid #ddd;
-        padding: 10px;
-        border-radius: 5px; */
+        margin: 0;
+        padding: 0;
+        color: darkblue ;
     }
     .container {
       display: flex;
@@ -267,7 +249,7 @@
       width: 100%;
       max-width: 1200px;
       margin: 0 auto;
-      padding: 0 15px;
+      padding: 0 0;
   }
     .right-body {
       width: 100%;
@@ -344,19 +326,22 @@
         }
         .prev { left: 10px; }
         .next { right: 10px; }
-    .notice-board {
-        overflow: hidden;
-        height: 100px;
-        position: relative;
-    }
-    .notice-board ul {
-        list-style-type: none;
-        padding: 0;
-        position: absolute;
-        animation: scrollUp 5s linear infinite;
-    }
+  .notice-board {
+    overflow: hidden;
+    height: 200px;  /* Adjust the height as needed */
+    position: relative;
+    background-color: whitesmoke  ;
+  }
+  .notice-board ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0; /* Add this line to remove default margin */
+    position: absolute;
+    top: 0; /* Add this line to start from the top */
+    animation: scrollUp 10s linear infinite;
+  }
     .notice-board li {
-        margin-bottom: 10px;
+        margin-bottom: 15px;
         white-space: nowrap;
     }
     @keyframes scrollUp {
@@ -380,8 +365,8 @@
   <div class="centered-text">
     <div style="font-size: 25px; font-weight: bold; color: #0057b7;">कार्यालय आयुक्त, सीमा शुल्क, इंदौर</div>
     <div style="font-size: 20px; font-weight: bold;">OFFICE OF THE COMMISSIONER OF CUSTOMS, INDORE</div>
-    <div style="font-size: 18px; font-weight: bold;">तीसरी मंजिल, बी-जोन, बिज़नेस स्पेस, पिपलिया कुमार, निपनिया, इंदौर-४५२०१०</div>
-    <div style="font-size: 18px; font-weight: bold;">3rd FLOOR, B-ZONE, BUSINESS SPACE, PIPALIYA KUMAR, NIPANIA, INDORE-452010</div>
+    <!-- <div style="font-size: 18px; font-weight: bold;">तीसरी मंजिल, बी-जोन, बिज़नेस स्पेस, पिपलिया कुमार, निपनिया, इंदौर-४५२०१०</div>
+    <div style="font-size: 18px; font-weight: bold;">3rd FLOOR, B-ZONE, BUSINESS SPACE, PIPALIYA KUMAR, NIPANIA, INDORE-452010</div> -->
   </div>
   <div class="right-section">
     <img src="images/header/flag-logo.png" alt="Flag Logo">
@@ -500,11 +485,11 @@
                     <div class="custom-slide"><img src="images/banner/banner-6.JPG" alt="Banner 3"></div>
                     <div class="custom-slide"><img src="images/banner/banner-7.jpg" alt="Banner 1"></div>
                 </div>
-                <!-- Arrows -->
-                <button class="custom-prev">&#10094;</button>
-                <button class="custom-next">&#10095;</button>
-                <!-- Dots -->
-                <div class="custom-dots"></div>
+               <!-- Arrows -->
+               <button class="prev" onclick="prevSlide()">&#10094;</button>
+               <button class="next" onclick="nextSlide()">&#10095;</button>
+               <!-- Dots -->
+               <div class="custom-dots"></div>
               </div>
             </div>
             <!-- Commissioner Message -->
@@ -599,12 +584,18 @@
                 <div class="header">Notice Board</div>
                 <div class="section notice-board">
                   <ul>
-                    <li>Important notice 1... </li>
-                    <li>Important notice 2... </li>
-                    <li>Important notice 3... </li>
-                    <li>Important notice 1... </li>
-                    <li>Important notice 2... </li>
-                    <li>Important notice 3... </li>
+                    <li>Establishment Order No.1 dated </li>
+                    <li>Establishment Order No.2 dated</li>
+                    <li>Establishment Order No.3 dated</li>
+                    <li>Establishment Order No.4 dated</li>
+                    <li>Establishment Order No.5 dated</li>
+                    <li>Establishment Order No.6 dated</li>
+                    <li>Establishment Order No.7 dated </li>
+                    <li>Establishment Order No.8 dated</li>
+                    <li>Establishment Order No.9 dated</li>
+                    <li>Establishment Order No.10 dated</li>
+                    <li>Establishment Order No.11 dated</li>
+                    <li>Establishment Order No.12 dated</li>
                   </ul>
                 </div>
               </div>
@@ -660,72 +651,95 @@
  
     <!-- Include external JavaScript file -->
     <script src="scripts.js"></script>
-    <script>
-      let currentIndex = 0;
-      const slides = document.querySelectorAll('.custom-slide');
-      const totalSlides = slides.length;
-      const dotsContainer = document.querySelector('.custom-dots');
-      const prevBtn = document.querySelector('.custom-prev');
-      const nextBtn = document.querySelector('.custom-next');
-  
-      // Create dots dynamically
-      slides.forEach((_, index) => {
-          let dot = document.createElement('span');
-          dot.classList.add('custom-dot');
-          dot.dataset.index = index;
-          dotsContainer.appendChild(dot);
+    <!-- Add this JavaScript to handle the dropdown functionality -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var dropdowns = document.querySelectorAll('.has-dropdown');
+
+    dropdowns.forEach(function(dropdown) {
+      dropdown.addEventListener('mouseenter', function() {
+        var dropdownContent = this.querySelector('.dropdown-content');
+        if (dropdownContent) {
+          dropdownContent.style.display = 'block';
+        }
       });
-  
-      const dots = document.querySelectorAll('.custom-dot');
-  
-      function showSlide(index) {
-          if (index >= totalSlides) currentIndex = 0;
-          else if (index < 0) currentIndex = totalSlides - 1;
-          else currentIndex = index;
-  
-          const offset = -currentIndex * 100;
-          document.querySelector('.custom-slides').style.transform = `translateX(${offset}%)`;
-  
-          dots.forEach(dot => dot.classList.remove('custom-active'));
-          dots[currentIndex].classList.add('custom-active');
-      }
-  
-      function nextSlide() {
-          showSlide(currentIndex + 1);
-      }
-  
-      function prevSlide() {
-          showSlide(currentIndex - 1);
-      }
-  
-      function autoSlide() {
-          nextSlide();
-      }
-  
-      // Set Active Dot Click Event
-      dots.forEach(dot => {
-          dot.addEventListener('click', (e) => {
-              showSlide(Number(e.target.dataset.index));
-          });
+
+      dropdown.addEventListener('mouseleave', function() {
+        var dropdownContent = this.querySelector('.dropdown-content');
+        if (dropdownContent) {
+          dropdownContent.style.display = 'none';
+        }
       });
-  
-      prevBtn.addEventListener('click', prevSlide);
-      nextBtn.addEventListener('click', nextSlide);
-  
-      let slideInterval = setInterval(autoSlide, 3000); // Auto-slide every 3 sec
-  
-      document.querySelector('.custom-slider-container').addEventListener('mouseenter', () => clearInterval(slideInterval));
-      document.querySelector('.custom-slider-container').addEventListener('mouseleave', () => slideInterval = setInterval(autoSlide, 3000));
-  
-      showSlide(currentIndex);
-       // Enlarge image on click
-  function enlargeImage(img) {
-      const modal = document.createElement('div');
-      modal.classList.add('image-modal');
-      modal.innerHTML = `<span class="close" onclick="this.parentElement.remove()">&times;</span><img src="${img.src}" class="modal-content">`;
-      document.body.appendChild(modal);
+    });
+  });
+</script>
+<script>
+  let currentIndex = 0;
+  const slides = document.querySelectorAll('.slide');
+  const totalSlides = slides.length;
+  const dotsContainer = document.querySelector('.custom-dots');
+  const prevBtn = document.querySelector('.prev');
+  const nextBtn = document.querySelector('.next');
+
+  // Create dots dynamically
+  slides.forEach((_, index) => {
+    let dot = document.createElement('span');
+    dot.classList.add('custom-dot');
+    dot.dataset.index = index;
+    dotsContainer.appendChild(dot);
+  });
+
+  const dots = document.querySelectorAll('.custom-dot');
+
+  function showSlide(index) {
+    if (index >= totalSlides) currentIndex = 0;
+    else if (index < 0) currentIndex = totalSlides - 1;
+    else currentIndex = index;
+
+    const offset = -currentIndex * 100;
+    document.querySelector('.slides').style.transform = `translateX(${offset}%)`;
+
+    dots.forEach(dot => dot.classList.remove('custom-active'));
+    dots[currentIndex].classList.add('custom-active');
   }
-    </script>
+
+  function nextSlide() {
+    showSlide(currentIndex + 1);
+  }
+
+  function prevSlide() {
+    showSlide(currentIndex - 1);
+  }
+
+  function autoSlide() {
+    nextSlide();
+  }
+
+  // Set Active Dot Click Event
+  dots.forEach(dot => {
+    dot.addEventListener('click', (e) => {
+      showSlide(Number(e.target.dataset.index));
+    });
+  });
+
+  prevBtn.addEventListener('click', prevSlide);
+  nextBtn.addEventListener('click', nextSlide);
+
+  let slideInterval = setInterval(autoSlide, 3000); // Auto-slide every 3 sec
+
+  document.querySelector('.slider-container').addEventListener('mouseenter', () => clearInterval(slideInterval));
+  document.querySelector('.slider-container').addEventListener('mouseleave', () => slideInterval = setInterval(autoSlide, 3000));
+
+  showSlide(currentIndex);
+
+  // Enlarge image on click
+  function enlargeImage(img) {
+    const modal = document.createElement('div');
+    modal.classList.add('image-modal');
+    modal.innerHTML = `<span class="close" onclick="this.parentElement.remove()">&times;</span><img src="${img.src}" class="modal-content">`;
+    document.body.appendChild(modal);
+  }
+</script>
     <script>
       function openModal(id) {
           document.getElementById(id).style.display = 'block';
