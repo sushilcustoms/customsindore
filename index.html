@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Homepage</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+    .section {
+        border: 1px solid #ddd;
+        padding: 15px;
+        margin: 10px 0;
+        border-radius: 5px;
+        background: #f9f9f9;
+    }
+    .header {
+        background: lightblue;
+        color: darkblue;
+        font-weight: bold;
+        padding: 10px;
+        text-align: center;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+    .commissioner-message {
+        max-height: 150px;
+        overflow: hidden;
+        position: relative;
+        text-align: justify;
+    }
+    .commissioner-message::after {
+        /* content: 'Read more.....'; */
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        background: white;
+        padding-left: 5px;
+        text-align: justify;
+    }
+    .read-more {
+        display: block;
+        margin-top: 10px;
+        color: blue;
+        cursor: pointer;
+        text-decoration: underline;
+    }
+    .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.5);
+        z-index: 999;
+    }
+    .close {
+        cursor: pointer;
+        float: right;
+        font-size: 20px;
+    }
+    .custom-slider-container {
+            position: relative;
+            max-width: 100%;
+            overflow: hidden;
+        }
+        .custom-slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .custom-slide {
+            min-width: 100%;
+            transition: opacity 1s;
+        }
+        .custom-slide img {
+            width: 100%;
+            height: auto;
+        }
+        /* Arrows */
+        .custom-prev, .custom-next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 50%;
+            font-size: 18px;
+        }
+        .section {
+        border: 1px solid #ddd;
+        padding: 15px;
+        margin: 10px 0;
+        border-radius: 5px;
+        background: #f9f9f9;
+    }
+    .header {
+        background: lightblue;
+        color: darkblue;
+        font-weight: bold;
+        padding: 10px;
+        text-align: center;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+    .commissioner-info {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+    }
+    .commissioner-photo {
+        text-align: center;
+        flex-shrink: 0;
+    }
+    .commissioner-photo img {
+        width: 150px;
+        height: auto;
+        border-radius: 8px;
+    }
+    .commissioner-photo p {
+        margin: 5px 0;
+        font-weight: bold;
+    }
+    .read-more {
+        display: block;
+        margin-top: 10px;
+        color: blue;
+        cursor: pointer;
+        text-decoration: underline;
+    }
+    .modal {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgb(182, 197, 230);
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        z-index: 1000;
+        width: 50%;
+        text-align: justify;
+    }
+    .modal-header {
+        font-weight: bold;
+        font-size: 18px;
+        margin-bottom: 10px;
+        text-align: center;
+        color: darkblue;
+        border: 1px solid lightblue;
+        border-radius: 5px black;
+    }
+    .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.5);
+        z-index: 999;
+    }
+    .close {
+        cursor: pointer;
+        float: right;
+        font-size: 20px;
+    }
+        /* .custom-prev { left: 10px; }
+        .custom-next { right: 10px; } */
+        .custom-prev:hover, .custom-next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        /* Dots */
+    .custom-dots {
+            text-align: center;
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+        }
+        .custom-dot {
+            height: 12px;
+            width: 12px;
+            margin: 0 5px;
+            background-color: gray;
+            border-radius: 50%;
+            display: inline-block;
+            cursor: pointer;
+        }
+        .custom-active {
+            background-color: white;
+        }
+    .section {
+        border: 1px solid #ddd;
+        padding: 15px;
+        margin: 10px 0;
+        border-radius: 5px;
+        background: #f9f9f9;
+    }
+    .header {
+        background: lightblue;
+        color: darkblue;
+        font-weight: bold;
+        padding: 10px;
+        text-align: center;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+    .content {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .content img {
+        width: 150px;
+        height: auto;
+        border-radius: 5px;
+    }
+    .text {
+        flex: 1;
+        text-align: justify;
+    
+    }
+    .read-more {
+        display: block ;
+        margin-top: 10px;        
+        color: blue;
+        cursor: pointer;
+        text-decoration: underline;
+    }
+    .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.5);
+        z-index: 999;
+    }
+    .close {
+        cursor: pointer;
+        float: right;
+        font-size: 20px;
+    }
+    .flex-container {
+        display: flex;
+        justify-content: space-between;
+        gap: 100px;
+    }
+    .box {
+        width: 50%;
+        /* border: 1px solid #ddd;
+        padding: 10px;
+        border-radius: 5px; */
+    }
+    .container {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+  }
+    .right-body {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 15px;
+      box-sizing: border-box;
+    }
+    
+    #sidebar-placeholder {
+      max-width: 300px;
+      margin-right: 15px;
+    }
+    
+    .gallery-container {
+            width: 100%; /* Adjust the size as needed */
+            /* max-width: 400px; */
+            margin: auto;
+            border: 2px solid #ccc;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            background-color: lightseagreen;
+        }
+        .gallery-header::after {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 2px;
+            background-color: darkblue;
+            margin-top: 5px;
+        }
+        .slider-container { 
+            position: relative; 
+            width: 100%; 
+            overflow: hidden; 
+            max-height: 300px;
+            border-radius: 5px;
+            background-color: offwhite;
+            padding: 10px;
+        }
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .slide {
+            flex: 0 0 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .slide img {
+            width: 100%;
+            height: auto;
+            max-height: 300px;
+            object-fit: cover;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .slide img:hover {
+            transform: scale(1.1);
+        }
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 50%;
+        }
+        .prev { left: 10px; }
+        .next { right: 10px; }
+    .notice-board {
+        overflow: hidden;
+        height: 100px;
+        position: relative;
+    }
+    .notice-board ul {
+        list-style-type: none;
+        padding: 0;
+        position: absolute;
+        animation: scrollUp 5s linear infinite;
+    }
+    .notice-board li {
+        margin-bottom: 10px;
+        white-space: nowrap;
+    }
+    @keyframes scrollUp {
+        0% { transform: translateY(100%); }
+        100% { transform: translateY(-100%); }
+    }
+  </style>
+</head>
+<body>
+    <div class="webpage-container">
+      <!-- Load Upper Header -->
+      <div class="header">
+  <div class="left-section">
+    <img src="images/header/custom-logi.png" alt="Customs Logo">
+    <div class="left-text">
+      CUSTOMS INDORE<br>
+      Bhopal Zone<br>
+      Madhya Pradesh & Chattisgarh
+    </div>
+  </div>
+  <div class="centered-text">
+    <div style="font-size: 25px; font-weight: bold; color: #0057b7;">कार्यालय आयुक्त, सीमा शुल्क, इंदौर</div>
+    <div style="font-size: 20px; font-weight: bold;">OFFICE OF THE COMMISSIONER OF CUSTOMS, INDORE</div>
+    <div style="font-size: 18px; font-weight: bold;">तीसरी मंजिल, बी-जोन, बिज़नेस स्पेस, पिपलिया कुमार, निपनिया, इंदौर-४५२०१०</div>
+    <div style="font-size: 18px; font-weight: bold;">3rd FLOOR, B-ZONE, BUSINESS SPACE, PIPALIYA KUMAR, NIPANIA, INDORE-452010</div>
+  </div>
+  <div class="right-section">
+    <img src="images/header/flag-logo.png" alt="Flag Logo">
+    <img src="images/header/swach-bharat.png" alt="Swachhta Logo">
+  </div>
+</div>
+     <!-- ===== Navigation Bar ===== -->
+<div class="bottom-header">
+    <ul>
+      <li><a href="index.html" target="_blank">Home</a></li>
+      <li><a href="aboutus.html" target="_blank">About Us</a></li>
+      <li class="has-dropdown">Formation
+        <ul class="dropdown-content" style="display: none;">
+          <li class="has-dropdown"><a href="formation-ICD.html" target="_blank">ICD</a>
+            <ul class="nested-dropdown">
+              <li><a href="formation-ICD.html" target="_blank">ICD Tihi</a></li>
+              <li><a href="formation-ICD.html" target="_blank">ICD Dhannad</a></li>
+              <li><a href="formation-ICD.html" target="_blank">ICD Mandideep</a></li>
+              <li><a href="formation-ICD.html" target="_blank">ICD Malanpur</a></li>
+              <li><a href="formation-ICD.html" target="_blank">ICD Raipur</a></li>
+              <li><a href="formation-ICD.html" target="_blank">ICD Kheda</a></li>
+              <li><a href="formation-ICD.html" target="_blank">ICD Powerkheda</a></li>
+            </ul>
+          </li>
+          <li class="has-dropdown"><a href="formation-circle.html" target="_blank">Circle</a>
+            <ul class="nested-dropdown">
+              <li>Bhopal</li>
+              <li>Indore</li>
+              <li>Ujjain</li>
+              <li>Jabalpur</li>
+              <li>Raipur</li>
+            </ul>
+          </li>
+          <li class="has-dropdown">Airport
+            <ul class="nested-dropdown">
+              <li>Indore (DABHIA)</li>
+              <li>Bhopal (Raja Bhoj)</li>
+              <li>Chatarpur</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li class="has-dropdown">Tax Legislation
+        <ul class="dropdown-content" style="display: none;">
+          <li><a href="https://taxinformation.cbic.gov.in/" target="_blank">Customs Acts</a></li>
+          <li><a href="https://taxinformation.cbic.gov.in/" target="_blank">Customs Rules</a></li>
+          <li><a href="https://taxinformation.cbic.gov.in/" target="_blank">Customs Regulation</a></li>
+          <li><a href="https://taxinformation.cbic.gov.in/" target="_blank">Customs Notification</li>
+          <li><a href="https://taxinformation.cbic.gov.in/" target="_blank">Customs Circulars</a></li>
+          <li><a href="https://taxinformation.cbic.gov.in/" target="_blank">Customs Guidelines</a></li>
+          <li><a href="https://www.cbic.gov.in/entities/cbic-content-mst/Njk%3D" target="_blank">Customs Tariff</a></li>
+          <li><a href="https://www.cbic.gov.in/entities/cbic-content-mst/NzA%3D" target="_blank">Drawback Schedule</a></li>
+        </ul>
+      </li>
+      <li class="has-dropdown">Portal Links
+        <ul class="dropdown-content" style="display: none;">
+          <li><a href="https://www.icegate.gov.in/" target="_blank">ICEGATE</a></li>
+          <li><a href="https://eccsmobility.cbic.gov.in/eicimobility/"  target="_blank">ECCS</a></li>
+          <li><a href="https://esanchar.cbic.gov.in/DIN/DINSearch"  target="_blank">Verify CBIC DIN</a></li>
+          <li><a href="https://foservices.icegate.gov.in/cip/cip#/home" target="_blank">Compliance Info Portal</a></li>
+          <li><a href="https://www.aeoindia.gov.in/" target="_blank">AEO Portal</a></li>
+          <li><a href="https://www.dgft.gov.in/CP/"   target="_blank">DGFT Portal</a></li>
+        </ul>
+      </li>
+      <li class="has-dropdown"><a href="news-media.html">News & Media</a>
+        <ul class="dropdown-content" style="display: none;">
+          <li>Departmental Magazines</li>
+          <li>Photo Gallery</li>
+          <li>Video Gallery</li>
+          <li>Press Coverage</li>
+          <li>Media Release</li>
+          <li>Events & Highlights</li>
+        </ul>
+      </li>
+      <li><a href="adminsetup.html" target="_blank">Administrative Setup</a></li>
+      <li><a href="helpdesk.html" target="_blank">Helpdesk</a></li>
+    </ul>
+  </div>
+     <!-- ===== Marquee Section ===== -->
+<div class="marquee-container">
+    <div class="news-box">Important news</div>
+    <div class="marquee"> #FraudAlert-Indian Customs never calls or sends SMS asking for Customs Duty payments to a personal bank account | All official communication from Indian Customs includes a DIN, which can be verified on the CBIC website.</div>
+  </div>
+      <!-- ===== Main Content Area ===== -->
+      <div class="container">
+<div class="sidebar-section">
+    <h6 class="section-main-title">Quick Links</h6>
+    <ul class="nav-links">
+      <li><a href="directory.html" target="_blank">Directory-Customs Indore</a></li>
+      <li><a href="citizen-charter.html">Citizen-Charter</a></li>
+      <li><a href="rti.html" target="_blank">RTI</a></li>
+      <li><a href="public-notice.html">Public Notice</a></li>
+      <li><a href="swachhta.html">Swachhta Highlights</a></li>
+      <li><a href="vigilence.html">Vigilence Awareness</a></li>
+    </ul>
+    <h6 class="section-main-title">Useful Links</h6>
+    <ul class="nav-links">
+      <li><a href="https://enquiry.icegate.gov.in/enquiryatices/beTrackIces" target="_blank">Bill of Entry Enquiry</a></li>
+      <li><a href="https://enquiry.icegate.gov.in/enquiryatices/sbTrack" target="_blank">Shipping Bill Enquiry</a></li>
+      <li><a href="https://enquiry.icegate.gov.in/enquiryatices/ChallanEnquiry/CE" target="_blank">Challan Enquiry</a></li>
+      <li><a href="https://www.old.icegate.gov.in/Webappl/Trade-Guide-on-Imports" target="_blank">Customs Duty Calculator</a></li>
+      <li><a href="https://foservices.icegate.gov.in/#/services/viewExchangeRate" target="_blank">Exchange Rate</a></li>
+    </ul>
+  </div>
+        <div class="right-body">
+          <div class="about_container">
+            <div class="section-box">
+              <!-- <div class="section-header">Banner Slideshow</div> -->
+              <div class="custom-slider-container">
+                <div class="custom-slides">
+                    <div class="custom-slide"><img src="images/banner/banner-1.jpg" alt="Banner 1"></div>
+                    <div class="custom-slide"><img src="images/banner/banner-2.jpg" alt="Banner 2"></div>
+                    <div class="custom-slide"><img src="images/banner/banner-3.jpg" alt="Banner 3"></div>
+                    <div class="custom-slide"><img src="images/banner/banner-4.jpg" alt="Banner 1"></div>
+                    <div class="custom-slide"><img src="images/banner/banner-5.jpg" alt="Banner 2"></div>
+                    <div class="custom-slide"><img src="images/banner/banner-6.JPG" alt="Banner 3"></div>
+                    <div class="custom-slide"><img src="images/banner/banner-7.jpg" alt="Banner 1"></div>
+                </div>
+                <!-- Arrows -->
+                <button class="custom-prev">&#10094;</button>
+                <button class="custom-next">&#10095;</button>
+                <!-- Dots -->
+                <div class="custom-dots"></div>
+              </div>
+            </div>
+            <!-- Commissioner Message -->
+            <div class="section">
+              <div class="header">Principal Commissioner's Message</div>
+              <div class="commissioner-info">
+                <div class="commissioner-photo">
+                  <img src="images/body-images/commr.jpg" alt="Pr. Commissioner">
+                  <p>Shri Rajeev Agarwal<br>Principal Commissioner</p>
+                </div>
+                <div class="commissioner-message" id="shortMessage">
+                  <p id="messagePreview">Welcome to the official website of Customs Indore, a crucial step towards transparency, efficiency, and seamless trade facilitation. As part of the Central Board of Indirect Taxes and Customs (CBIC), Ministry of Finance, we are committed to revenue collection, trade facilitation, and law enforcement with integrity and excellence. Covering the vast jurisdictions of MP & Chhattisgarh.we oversee ICDs, ACC and DABHIA, Indore, 
+                  <span class="read-more" onclick="openModal('modal1')">Read More</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- About Customs Indore -->
+            <div class="section">
+              <div class="header">About Customs Indore</div>
+              <div class="content">
+                <img src="images/body-images/customsindore.JPG" alt="Customs Indore">
+                <div class="text">
+                  <p>Customs Indore stands as a pillar of excellence, safeguarding India’s economic frontiers with unwavering commitment and efficiency. Covering the vast jurisdictions of Madhya Pradesh and Chhattisgarh, it plays a pivotal role in trade facilitation, anti-smuggling operations, and enforcement of laws that protect national interests. With cutting-edge technology and a highly skilled workforce, Customs Indore ensures seamless import-export procedures, boosting India’s global trade competitiveness.</p>
+                  <span class="read-more" onclick="openModal('modal2')">Read More</span>
+                </div>
+              </div>
+            </div>
+            <!-- About Indore -->
+            <div class="section">
+              <div class="header">About Indore</div>
+              <div class="content">
+                <img src="images/body-images/about-indore.jpg" alt="Indore City">
+                <div class="text">
+                  <p>Indore, the crown jewel of Madhya Pradesh, is a city where history, culture, and modernity blend seamlessly to create an enchanting urban paradise. Known as India’s cleanest city for seven consecutive years, Indore stands as a shining example of sustainable urban development. The city’s majestic Rajwada Palace and Lal Bagh Palace whisper tales of royal grandeur, while the awe-inspiring Kanch Mandir reflects unmatched architectural brilliance.</p>
+                  <span class="read-more" onclick="openModal('modal3')">Read More</span>
+                </div>
+              </div>
+            </div>
+            <!-- Modals -->
+            <div id="overlay" class="overlay" onclick="closeModal()"></div>
+            <div id="modal1" class="modal">
+              <span class="close" onclick="closeModal()">&times;</span>
+              <div class="modal-header">Principal Commissioner's Message</div>
+              <p>Welcome to the official website of Customs Indore, a crucial step towards transparency, efficiency, and seamless trade facilitation. As part of the Central Board of Indirect Taxes and Customs (CBIC), Ministry of Finance, we are committed to revenue collection, trade facilitation, and law enforcement with integrity and excellence. Covering the vast jurisdictions of Madhya Pradesh and Chhattisgarh, we oversee Inland Container Depots (ICDs), Air Cargo complexes, and Devi Ahilyabai Holkar International Airport, Indore, ensuring the smooth flow of trade while vigilantly preventing smuggling and illicit activities.
+                This website serves as a digital gateway to our services, offering easy access to policies, procedures, and real-time updates. With digital initiatives like ICEGATE, we are driving a paperless, efficient customs system aligned with the Ease of Doing Business vision. Our dedicated team is committed to fostering a secure, trade-friendly, and technology-driven ecosystem that strengthens India’s economic growth.
+                I encourage all stakeholders to explore and utilize this platform, reinforcing our collective mission of efficiency, compliance, and national security. Together, let us build a progressive and robust customs framework that upholds the spirit of a self-reliant and prosperous India.
+                Jai Hind!</p>
+            </div>
+            <div id="modal2" class="modal">
+              <span class="close" onclick="closeModal()">&times;</span>
+              <div class="modal-header">Customs Indore: Guardians of Economic Integrity & National Security</div>
+              <p>Customs Indore stands as a pillar of excellence, safeguarding India’s economic frontiers with unwavering commitment and efficiency. Covering the vast jurisdictions of Madhya Pradesh and Chhattisgarh, it plays a pivotal role in trade facilitation, anti-smuggling operations, and enforcement of laws that protect national interests. With cutting-edge technology and a highly skilled workforce, Customs Indore ensures seamless import-export procedures, boosting India’s global trade competitiveness.
+                The department is not just about taxation—it is a sentinel of national security, preventing the inflow of contraband, narcotics, and illegal goods. Its proactive vigilance and intelligence-driven operations have consistently upheld the integrity of our borders. Customs Indore also promotes the Ease of Doing Business by streamlining procedures, enhancing transparency, and supporting businesses in compliance with international standards.
+                Beyond enforcement, Customs Indore actively participates in community outreach, environmental sustainability, and public awareness programs, reflecting its commitment to national development. As the custodian of trade across Madhya Pradesh and Chhattisgarh, it ensures lawful commerce, economic growth, and national security. With its progressive vision and steadfast duty, Customs Indore stands as a beacon of excellence, making every Indian proud of its unparalleled contribution to the nation’s prosperity.</p>
+            </div>
+            <div id="modal3" class="modal">
+              <span class="close" onclick="closeModal()">&times;</span>
+              <div class="modal-header">About beautiful City Indore...</div>
+              <p>Indore, the crown jewel of Madhya Pradesh, is a city where history, culture, and modernity blend seamlessly to create an enchanting urban paradise. Known as India’s cleanest city for seven consecutive years, Indore stands as a shining example of sustainable urban development. The city’s majestic Rajwada Palace and Lal Bagh Palace whisper tales of royal grandeur, while the awe-inspiring Kanch Mandir reflects unmatched architectural brilliance.
+                Indore is a food lover’s utopia, where the aroma of poha-jalebi, sabudana khichdi, and garadu fills the air, and the bustling Sarafa Bazaar comes alive at night, offering a feast for the senses. As an educational powerhouse, it is home to prestigious institutions like IIM Indore and IIT Indore, shaping the nation’s future leaders.
+                Beyond its academic and culinary fame, Indore is a hub of commerce, industry, and innovation, driving economic growth in Central India. The spiritual essence of the city is reflected in the revered Khajrana Ganesh Temple, where thousands seek blessings. Festivals like Rangpanchami turn the streets into a vibrant canvas of colors. With warm-hearted people, an ever-evolving skyline, and an unshakable spirit, Indore is not just a city—it’s an experience, a legacy, and a dream woven into reality.</p>
+            </div>
+            <!-- Photo Gallery -->
+            <div class="flex-container">
+                <div class="box">
+                  <div class="header">Photo Gallery</div>
+                  <div class="section-box">
+                    <div class="gallery-container">
+                      <div class="slider-container" onmouseover="pauseSlide()" onmouseout="resumeSlide()">
+                        <div class="slides">
+                          <div class="slide"><img src="images/slideshow/1.jpg" alt="Image 1" onclick="enlargeImage(this)"></div>
+                          <div class="slide"><img src="images/slideshow/2.JPG" alt="Image 2" onclick="enlargeImage(this)"></div>
+                          <div class="slide"><img src="images/slideshow/3.jpg" alt="Image 3" onclick="enlargeImage(this)"></div>
+                          <div class="slide"><img src="images/slideshow/3.jpg" alt="Image 4" onclick="enlargeImage(this)"></div>
+                          <div class="slide"><img src="images/slideshow/4.JPG" alt="Image 5" onclick="enlargeImage(this)"></div>
+                          <div class="slide"><img src="images/slideshow/5.jpg" alt="Image 3" onclick="enlargeImage(this)"></div>
+                          <div class="slide"><img src="images/slideshow/6.jpg" alt="Image 4" onclick="enlargeImage(this)"></div>
+                          <div class="slide"><img src="images/slideshow/7.JPG" alt="Image 5" onclick="enlargeImage(this)"></div>
+                        </div>
+                        <!-- Arrows -->
+                        <button class="prev" onclick="prevSlide()">&#10094;</button>
+                        <button class="next" onclick="nextSlide()">&#10095;</button>
+                        <!-- Dots -->
+                        <div class="custom-dots"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <!-- Notice Board -->
+              <div class="box">
+                <div class="header">Notice Board</div>
+                <div class="section notice-board">
+                  <ul>
+                    <li>Important notice 1... </li>
+                    <li>Important notice 2... </li>
+                    <li>Important notice 3... </li>
+                    <li>Important notice 1... </li>
+                    <li>Important notice 2... </li>
+                    <li>Important notice 3... </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Load Footer -->
+      <div id="footer-placeholder"></div>
+    </div>
+ 
+    <!-- Include external JavaScript file -->
+    <script src="scripts.js"></script>
+    <script>
+      let currentIndex = 0;
+      const slides = document.querySelectorAll('.custom-slide');
+      const totalSlides = slides.length;
+      const dotsContainer = document.querySelector('.custom-dots');
+      const prevBtn = document.querySelector('.custom-prev');
+      const nextBtn = document.querySelector('.custom-next');
+  
+      // Create dots dynamically
+      slides.forEach((_, index) => {
+          let dot = document.createElement('span');
+          dot.classList.add('custom-dot');
+          dot.dataset.index = index;
+          dotsContainer.appendChild(dot);
+      });
+  
+      const dots = document.querySelectorAll('.custom-dot');
+  
+      function showSlide(index) {
+          if (index >= totalSlides) currentIndex = 0;
+          else if (index < 0) currentIndex = totalSlides - 1;
+          else currentIndex = index;
+  
+          const offset = -currentIndex * 100;
+          document.querySelector('.custom-slides').style.transform = `translateX(${offset}%)`;
+  
+          dots.forEach(dot => dot.classList.remove('custom-active'));
+          dots[currentIndex].classList.add('custom-active');
+      }
+  
+      function nextSlide() {
+          showSlide(currentIndex + 1);
+      }
+  
+      function prevSlide() {
+          showSlide(currentIndex - 1);
+      }
+  
+      function autoSlide() {
+          nextSlide();
+      }
+  
+      // Set Active Dot Click Event
+      dots.forEach(dot => {
+          dot.addEventListener('click', (e) => {
+              showSlide(Number(e.target.dataset.index));
+          });
+      });
+  
+      prevBtn.addEventListener('click', prevSlide);
+      nextBtn.addEventListener('click', nextSlide);
+  
+      let slideInterval = setInterval(autoSlide, 3000); // Auto-slide every 3 sec
+  
+      document.querySelector('.custom-slider-container').addEventListener('mouseenter', () => clearInterval(slideInterval));
+      document.querySelector('.custom-slider-container').addEventListener('mouseleave', () => slideInterval = setInterval(autoSlide, 3000));
+  
+      showSlide(currentIndex);
+       // Enlarge image on click
+  function enlargeImage(img) {
+      const modal = document.createElement('div');
+      modal.classList.add('image-modal');
+      modal.innerHTML = `<span class="close" onclick="this.parentElement.remove()">&times;</span><img src="${img.src}" class="modal-content">`;
+      document.body.appendChild(modal);
+  }
+    </script>
+    <script>
+      function openModal(id) {
+          document.getElementById(id).style.display = 'block';
+          document.getElementById('overlay').style.display = 'block';
+      }
+      function closeModal() {
+          document.querySelectorAll('.modal').forEach(modal => modal.style.display = 'none');
+          document.getElementById('overlay').style.display = 'none';
+      }
+    </script>
+   </body>
+</html>
