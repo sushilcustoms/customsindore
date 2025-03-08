@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Homepage</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .right-body {
+        flex: 1;
+        padding: 10px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .about_container {
+        width: 100%;
+        max-width: 800px; /* Content width limit */
+        margin: auto;
+    }
+    .box {
+        background-color: white;
+        padding: 15px;
+        margin: 10px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+    }
+    .content {
+        display: none;
+        text-align: left;
+        padding-top: 10px;
+    }
+    h3 {
+     background-color: lightskyblue;
+      padding: 5px;
+      color: darkblue;
+      border-radius: 1px;
+
+    }
+</style>
+</head>
+<body>
+    <div class="webpage-container">
+      <!-- Load Upper Header -->
+      <div class="header">
+  <div class="left-section">
+    <img src="images/header/custom-logi.png" alt="Customs Logo">
+    <div class="left-text">
+      CUSTOMS INDORE<br>
+      Bhopal Zone<br>
+      Madhya Pradesh & Chattisgarh
+    </div>
+  </div>
+  <div class="centered-text">
+    <div style="font-size: 25px; font-weight: bold; color: #0057b7;">कार्यालय आयुक्त, सीमा शुल्क, इंदौर</div>
+    <div style="font-size: 20px; font-weight: bold;">OFFICE OF THE COMMISSIONER OF CUSTOMS, INDORE</div>
+    <!-- <div style="font-size: 18px; font-weight: bold;">तीसरी मंजिल, बी-जोन, बिज़नेस स्पेस, पिपलिया कुमार, निपनिया, इंदौर-४५२०१०</div>
+    <div style="font-size: 18px; font-weight: bold;">3rd FLOOR, B-ZONE, BUSINESS SPACE, PIPALIYA KUMAR, NIPANIA, INDORE-452010</div> -->
+  </div>
+  <div class="right-section">
+    <img src="images/header/flag-logo.png" alt="Flag Logo">
+    <img src="images/header/swach-bharat.png" alt="Swachhta Logo">
+  </div>
+</div>
+     <!-- ===== Navigation Bar ===== -->
+<div class="bottom-header">
+    <ul>
+      <li><a href="index.html" target="_blank">Home</a></li>
+      <li><a href="aboutus.html" target="_blank">About Us</a></li>
+      <li class="has-dropdown">Formation
+        <ul class="dropdown-content" style="display: none;">
+          <li class="has-dropdown"><a href="formation-ICD.html" target="_blank">ICD</a>
+            <ul class="nested-dropdown">
+              <li><a href="formation-ICD.html" target="_blank">ICD Tihi</a></li>
+              <li><a href="formation-ICD.html" target="_blank">ICD Dhannad</a></li>
+              <li><a href="formation-ICD.html" target="_blank">ICD Mandideep</a></li>
+              <li><a href="formation-ICD.html" target="_blank">ICD Malanpur</a></li>
+              <li><a href="formation-ICD.html" target="_blank">ICD Raipur</a></li>
+              <li><a href="formation-ICD.html" target="_blank">ICD Kheda</a></li>
+              <li><a href="formation-ICD.html" target="_blank">ICD Powerkheda</a></li>
+            </ul>
+          </li>
+          <li class="has-dropdown"><a href="formation-circle.html" target="_blank">Circle</a>
+            <ul class="nested-dropdown">
+              <li>Bhopal</li>
+              <li>Indore</li>
+              <li>Ujjain</li>
+              <li>Jabalpur</li>
+              <li>Raipur</li>
+            </ul>
+          </li>
+          <li class="has-dropdown">Airport
+            <ul class="nested-dropdown">
+              <li>Indore (DABHIA)</li>
+              <li>Bhopal (Raja Bhoj)</li>
+              <li>Chatarpur</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li class="has-dropdown">Tax Legislation
+        <ul class="dropdown-content" style="display: none;">
+          <li><a href="https://taxinformation.cbic.gov.in/" target="_blank">Customs Acts</a></li>
+          <li><a href="https://taxinformation.cbic.gov.in/" target="_blank">Customs Rules</a></li>
+          <li><a href="https://taxinformation.cbic.gov.in/" target="_blank">Customs Regulation</a></li>
+          <li><a href="https://taxinformation.cbic.gov.in/" target="_blank">Customs Notification</li>
+          <li><a href="https://taxinformation.cbic.gov.in/" target="_blank">Customs Circulars</a></li>
+          <li><a href="https://taxinformation.cbic.gov.in/" target="_blank">Customs Guidelines</a></li>
+          <li><a href="https://www.cbic.gov.in/entities/cbic-content-mst/Njk%3D" target="_blank">Customs Tariff</a></li>
+          <li><a href="https://www.cbic.gov.in/entities/cbic-content-mst/NzA%3D" target="_blank">Drawback Schedule</a></li>
+        </ul>
+      </li>
+      <li class="has-dropdown">Portal Links
+        <ul class="dropdown-content" style="display: none;">
+          <li><a href="https://www.icegate.gov.in/" target="_blank">ICEGATE</a></li>
+          <li><a href="https://eccsmobility.cbic.gov.in/eicimobility/"  target="_blank">ECCS</a></li>
+          <li><a href="https://esanchar.cbic.gov.in/DIN/DINSearch"  target="_blank">Verify CBIC DIN</a></li>
+          <li><a href="https://foservices.icegate.gov.in/cip/cip#/home" target="_blank">Compliance Info Portal</a></li>
+          <li><a href="https://www.aeoindia.gov.in/" target="_blank">AEO Portal</a></li>
+          <li><a href="https://www.dgft.gov.in/CP/"   target="_blank">DGFT Portal</a></li>
+        </ul>
+      </li>
+      <li class="has-dropdown"><a href="news-media.html">News & Media</a>
+        <ul class="dropdown-content" style="display: none;">
+          <li>Departmental Magazines</li>
+          <li>Photo Gallery</li>
+          <li>Video Gallery</li>
+          <li>Press Coverage</li>
+          <li>Media Release</li>
+          <li>Events & Highlights</li>
+        </ul>
+      </li>
+      <li><a href="adminsetup.html" target="_blank">Administrative Setup</a></li>
+      <li><a href="helpdesk.html" target="_blank">Helpdesk</a></li>
+    </ul>
+  </div>
+     <!-- ===== Marquee Section ===== -->
+<div class="marquee-container">
+    <div class="news-box">Important news</div>
+    <div class="marquee"> #FraudAlert-Indian Customs never calls or sends SMS asking for Customs Duty payments to a personal bank account | All official communication from Indian Customs includes a DIN, which can be verified on the CBIC website.</div>
+  </div>
+      <!-- ===== Main Content Area ===== -->
+      <div class="container">
+<div class="sidebar-section">
+    <h6 class="section-main-title">Quick Links</h6>
+    <ul class="nav-links">
+      <li><a href="directory.html" target="_blank">Directory-Customs Indore</a></li>
+      <li><a href="citizen-charter.html">Citizen-Charter</a></li>
+      <li><a href="rti.html" target="_blank">RTI</a></li>
+      <li><a href="public-notice.html">Public Notice</a></li>
+      <li><a href="swachhta.html">Swachhta Highlights</a></li>
+      <li><a href="vigilence.html">Vigilence Awareness</a></li>
+    </ul>
+    <h6 class="section-main-title">Useful Links</h6>
+    <ul class="nav-links">
+      <li><a href="https://enquiry.icegate.gov.in/enquiryatices/beTrackIces" target="_blank">Bill of Entry Enquiry</a></li>
+      <li><a href="https://enquiry.icegate.gov.in/enquiryatices/sbTrack" target="_blank">Shipping Bill Enquiry</a></li>
+      <li><a href="https://enquiry.icegate.gov.in/enquiryatices/ChallanEnquiry/CE" target="_blank">Challan Enquiry</a></li>
+      <li><a href="https://www.old.icegate.gov.in/Webappl/Trade-Guide-on-Imports" target="_blank">Customs Duty Calculator</a></li>
+      <li><a href="https://foservices.icegate.gov.in/#/services/viewExchangeRate" target="_blank">Exchange Rate</a></li>
+    </ul>
+  </div>
+  <div class="right-body">
+    <div class="about_container">
+      <div class="box" onclick="toggleContent('history')">
+        <h3>History</h3>
+        <div id="history" class="content">
+          <p>The Office of the Commissioner of Customs in Indore was established on January 15, 2018, as a subordinate office to the Central Board of Indirect Taxes and Customs (CBIC). 
+            This establishment reflects Indore's growing significance in trade and commerce, necessitating a dedicated customs administration to manage and facilitate international trade operations in the region.</p>
+        </div>
+      </div>
+      <div class="box" onclick="toggleContent('vision')">
+        <h3>Vision</h3>
+        <div id="vision" class="content">
+          <p>Partnering in India’s socio-economic growth by formulating...</p>
+        </div>
+      </div>
+      <div class="box" onclick="toggleContent('mission')">
+        <h3>Mission</h3>
+        <div id="mission" class="content">
+          <ul>
+            <li>Simple and predictable</li>
+            <li>Fair and just</li>
+            <li>Transparent</li>
+            <li>Technology-driven</li>
+          </ul>
+        </div>
+      </div>
+      <div class="box" onclick="toggleContent('commitment')">
+        <h3>Our Commitment</h3>
+        <div id="commitment" class="content">
+          <ul>
+            <li>To encourage voluntary compliance</li>
+            <li>To educate citizens about indirect tax laws</li>
+            <li>To continuously enhance service delivery standards</li>
+            <li>To promote a consultative and collaborative environment</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      <!-- Load Footer -->
+      <footer class="footer-wrapper">
+        <!-- Image Slider Section -->
+        <section class="carousel-wrapper">
+          <button class="arrow-left" onclick="slideCarousel(-200)">&lt;</button>
+          <div class="carousel-container" id="carousel">
+            <a target="_blank" href="http://digitalindia.gov.in/" title="Digital India">
+              <img src="images/footer/digital-india.png" alt="Digital India">
+            </a>
+            <a target="_blank" href="http://www.makeinindia.com/" title="Make In India">
+              <img src="images/footer/makeinindia.png" alt="Make In India">
+            </a>
+            <a target="_blank" href="http://india.gov.in/" title="National Portal of India">
+              <img src="images/footer/india-gov.png" alt="National Portal of India">
+            </a>
+            <a target="_blank" href="http://goidirectory.nic.in/" title="GOI Web Directory">
+              <img src="images/footer/goidirectory.png" alt="GOI Web Directory">
+            </a>
+            <a target="_blank" href="https://data.gov.in/" title="Data Portal">
+              <img src="images/footer/data-gov.png" alt="Data Portal">
+            </a>
+            <a target="_blank" href="https://mygov.in/" title="MyGov">
+              <img src="images/footer/mygov.png" alt="MyGov">
+            </a>
+            <a target="_blank" href="https://mygov.in/" title="World Customs Organization">
+              <img src="images/footer/WCO.JPG" alt="World Customs Organization">
+            </a>
+            <a target="_blank" href="https://mygov.in/" title="MCI">
+              <img src="images/footer/mci.png" alt="MCI">
+            </a>
+          </div>
+          <button class="arrow-right" onclick="slideCarousel(200)">&gt;</button>
+        </section>
+        <!-- Separator Line -->
+        <div class="footer-separator"></div>
+        <!-- Footer Bottom Section -->
+        <div class="footer-bottom-wrapper">
+          <div class="footer-bottom-container">
+            <div class="footer-content">
+              <strong>@2025 Indore Customs</strong> | Website Designed, Developed and Maintained by Indore Customs
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+ 
+    <!-- Include external JavaScript file -->
+<script src="scripts.js"></script>
+<script>
+    function toggleContent(id) {
+      var content = document.getElementById(id);
+      if (content.style.display === "block") {
+        content.style.display = "none";
+      } else {
+        content.style.display = "block";
+      }
+    }
+  </script>
+    <!-- Add this JavaScript to handle the dropdown functionality -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var dropdowns = document.querySelectorAll('.has-dropdown');
+
+    dropdowns.forEach(function(dropdown) {
+      dropdown.addEventListener('mouseenter', function() {
+        var dropdownContent = this.querySelector('.dropdown-content');
+        if (dropdownContent) {
+          dropdownContent.style.display = 'block';
+        }
+      });
+
+      dropdown.addEventListener('mouseleave', function() {
+        var dropdownContent = this.querySelector('.dropdown-content');
+        if (dropdownContent) {
+          dropdownContent.style.display = 'none';
+        }
+      });
+    });
+  });
+</script>
+<script>
+  let currentIndex = 0;
+  const slides = document.querySelectorAll('.slide');
+  const totalSlides = slides.length;
+  const dotsContainer = document.querySelector('.custom-dots');
+  const prevBtn = document.querySelector('.prev');
+  const nextBtn = document.querySelector('.next');
+
+  // Create dots dynamically
+  slides.forEach((_, index) => {
+    let dot = document.createElement('span');
+    dot.classList.add('custom-dot');
+    dot.dataset.index = index;
+    dotsContainer.appendChild(dot);
+  });
+
+  const dots = document.querySelectorAll('.custom-dot');
+
+  function showSlide(index) {
+    if (index >= totalSlides) currentIndex = 0;
+    else if (index < 0) currentIndex = totalSlides - 1;
+    else currentIndex = index;
+
+    const offset = -currentIndex * 100;
+    document.querySelector('.slides').style.transform = `translateX(${offset}%)`;
+
+    dots.forEach(dot => dot.classList.remove('custom-active'));
+    dots[currentIndex].classList.add('custom-active');
+  }
+
+  function nextSlide() {
+    showSlide(currentIndex + 1);
+  }
+
+  function prevSlide() {
+    showSlide(currentIndex - 1);
+  }
+
+  function autoSlide() {
+    nextSlide();
+  }
+
+  // Set Active Dot Click Event
+  dots.forEach(dot => {
+    dot.addEventListener('click', (e) => {
+      showSlide(Number(e.target.dataset.index));
+    });
+  });
+
+  prevBtn.addEventListener('click', prevSlide);
+  nextBtn.addEventListener('click', nextSlide);
+
+  let slideInterval = setInterval(autoSlide, 3000); // Auto-slide every 3 sec
+
+  document.querySelector('.slider-container').addEventListener('mouseenter', () => clearInterval(slideInterval));
+  document.querySelector('.slider-container').addEventListener('mouseleave', () => slideInterval = setInterval(autoSlide, 3000));
+
+  showSlide(currentIndex);
+
+  // Enlarge image on click
+  function enlargeImage(img) {
+    const modal = document.createElement('div');
+    modal.classList.add('image-modal');
+    modal.innerHTML = `<span class="close" onclick="this.parentElement.remove()">&times;</span><img src="${img.src}" class="modal-content">`;
+    document.body.appendChild(modal);
+  }
+</script>
+    <script>
+      function openModal(id) {
+          document.getElementById(id).style.display = 'block';
+          document.getElementById('overlay').style.display = 'block';
+      }
+      function closeModal() {
+          document.querySelectorAll('.modal').forEach(modal => modal.style.display = 'none');
+          document.getElementById('overlay').style.display = 'none';
+      }
+    </script>
+   </body>
+</html>

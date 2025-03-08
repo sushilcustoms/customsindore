@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Homepage</title>
+  <link rel="stylesheet" href="style.css">
+<style>
+.right-body {
+    display: flex;
+    flex-direction: column; /* Keep elements stacked */
+    align-items: center; /* Center align elements */
+    justify-content: center; /* Center align elements */
+    height: 120vh; /* Full height to prevent shifts */
+    overflow: hidden; /* Prevents layout shifts */
+}
+#orgchart {
+    flex-grow: 1; /* Allows the chart to expand without pushing content */
+    overflow: auto; /* Enables scrolling if content expands */
+    max-height: 600px; /* Limit chart height */
+    display: flex;
+    justify-content: center;
+}
+
+iframe {
+    flex-shrink: 0; /* Prevents video from resizing or moving */
+}
+.right-body h2 {
+    width: 100%; /* Ensure heading stays full width */
+    text-align: center;
+}
+
+body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+     }
+
+.clickable {
+            cursor: pointer;
+            color: blue;
+            text-decoration: underline;
+}
+h2 {
+            color: darkblue ;
+}
+</style>
+</head>
+<body>
+    <div class="webpage-container">
+      <!-- Load Upper Header -->
+      <div class="header">
+  <div class="left-section">
+    <img src="images/header/custom-logi.png" alt="Customs Logo">
+    <div class="left-text">
+      CUSTOMS INDORE<br>
+      Bhopal Zone<br>
+      Madhya Pradesh & Chattisgarh
+    </div>
+  </div>
+  <div class="centered-text">
+    <div style="font-size: 25px; font-weight: bold; color: #0057b7;">कार्यालय आयुक्त, सीमा शुल्क, इंदौर</div>
+    <div style="font-size: 20px; font-weight: bold;">OFFICE OF THE COMMISSIONER OF CUSTOMS, INDORE</div>
+    <!-- <div style="font-size: 18px; font-weight: bold;">तीसरी मंजिल, बी-जोन, बिज़नेस स्पेस, पिपलिया कुमार, निपनिया, इंदौर-४५२०१०</div>
+    <div style="font-size: 18px; font-weight: bold;">3rd FLOOR, B-ZONE, BUSINESS SPACE, PIPALIYA KUMAR, NIPANIA, INDORE-452010</div> -->
+  </div>
+  <div class="right-section">
+    <img src="images/header/flag-logo.png" alt="Flag Logo">
+    <img src="images/header/swach-bharat.png" alt="Swachhta Logo">
+  </div>
+</div>
+     <!-- ===== Navigation Bar ===== -->
+<div class="bottom-header">
+    <ul>
+      <li><a href="index.html" target="_blank">Home</a></li>
+      <li><a href="aboutus.html" target="_blank">About Us</a></li>
+      <li class="has-dropdown">Formation
+        <ul class="dropdown-content" style="display: none;">
+          <li class="has-dropdown"><a href="formation-ICD.html" target="_blank">ICD</a>
+            <ul class="nested-dropdown">
+              <li><a href="formation-ICD.html" target="_blank">ICD Tihi</a></li>
+              <li><a href="formation-ICD.html" target="_blank">ICD Dhannad</a></li>
+              <li><a href="formation-ICD.html" target="_blank">ICD Mandideep</a></li>
+              <li><a href="formation-ICD.html" target="_blank">ICD Malanpur</a></li>
+              <li><a href="formation-ICD.html" target="_blank">ICD Raipur</a></li>
+              <li><a href="formation-ICD.html" target="_blank">ICD Kheda</a></li>
+              <li><a href="formation-ICD.html" target="_blank">ICD Powerkheda</a></li>
+            </ul>
+          </li>
+          <li class="has-dropdown"><a href="formation-circle.html" target="_blank">Circle</a>
+            <ul class="nested-dropdown">
+              <li>Bhopal</li>
+              <li>Indore</li>
+              <li>Ujjain</li>
+              <li>Jabalpur</li>
+              <li>Raipur</li>
+            </ul>
+          </li>
+          <li class="has-dropdown">Airport
+            <ul class="nested-dropdown">
+              <li>Indore (DABHIA)</li>
+              <li>Bhopal (Raja Bhoj)</li>
+              <li>Chatarpur</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li class="has-dropdown">Tax Legislation
+        <ul class="dropdown-content" style="display: none;">
+          <li><a href="https://taxinformation.cbic.gov.in/" target="_blank">Customs Acts</a></li>
+          <li><a href="https://taxinformation.cbic.gov.in/" target="_blank">Customs Rules</a></li>
+          <li><a href="https://taxinformation.cbic.gov.in/" target="_blank">Customs Regulation</a></li>
+          <li><a href="https://taxinformation.cbic.gov.in/" target="_blank">Customs Notification</li>
+          <li><a href="https://taxinformation.cbic.gov.in/" target="_blank">Customs Circulars</a></li>
+          <li><a href="https://taxinformation.cbic.gov.in/" target="_blank">Customs Guidelines</a></li>
+          <li><a href="https://www.cbic.gov.in/entities/cbic-content-mst/Njk%3D" target="_blank">Customs Tariff</a></li>
+          <li><a href="https://www.cbic.gov.in/entities/cbic-content-mst/NzA%3D" target="_blank">Drawback Schedule</a></li>
+        </ul>
+      </li>
+      <li class="has-dropdown">Portal Links
+        <ul class="dropdown-content" style="display: none;">
+          <li><a href="https://www.icegate.gov.in/" target="_blank">ICEGATE</a></li>
+          <li><a href="https://eccsmobility.cbic.gov.in/eicimobility/"  target="_blank">ECCS</a></li>
+          <li><a href="https://esanchar.cbic.gov.in/DIN/DINSearch"  target="_blank">Verify CBIC DIN</a></li>
+          <li><a href="https://foservices.icegate.gov.in/cip/cip#/home" target="_blank">Compliance Info Portal</a></li>
+          <li><a href="https://www.aeoindia.gov.in/" target="_blank">AEO Portal</a></li>
+          <li><a href="https://www.dgft.gov.in/CP/"   target="_blank">DGFT Portal</a></li>
+        </ul>
+      </li>
+      <li class="has-dropdown"><a href="news-media.html">News & Media</a>
+        <ul class="dropdown-content" style="display: none;">
+          <li>Departmental Magazines</li>
+          <li>Photo Gallery</li>
+          <li>Video Gallery</li>
+          <li>Press Coverage</li>
+          <li>Media Release</li>
+          <li>Events & Highlights</li>
+        </ul>
+      </li>
+      <li><a href="adminsetup.html" target="_blank">Administrative Setup</a></li>
+      <li><a href="helpdesk.html" target="_blank">Helpdesk</a></li>
+    </ul>
+  </div>
+     <!-- ===== Marquee Section ===== -->
+<div class="marquee-container">
+    <div class="news-box">Important news</div>
+    <div class="marquee"> #FraudAlert-Indian Customs never calls or sends SMS asking for Customs Duty payments to a personal bank account | All official communication from Indian Customs includes a DIN, which can be verified on the CBIC website.</div>
+  </div>
+      <!-- ===== Main Content Area ===== -->
+      <div class="container">
+<div class="sidebar-section">
+    <h6 class="section-main-title">Quick Links</h6>
+    <ul class="nav-links">
+      <li><a href="directory.html" target="_blank">Directory-Customs Indore</a></li>
+      <li><a href="citizen-charter.html">Citizen-Charter</a></li>
+      <li><a href="rti.html" target="_blank">RTI</a></li>
+      <li><a href="public-notice.html">Public Notice</a></li>
+      <li><a href="swachhta.html">Swachhta Highlights</a></li>
+      <li><a href="vigilence.html">Vigilence Awareness</a></li>
+    </ul>
+    <h6 class="section-main-title">Useful Links</h6>
+    <ul class="nav-links">
+      <li><a href="https://enquiry.icegate.gov.in/enquiryatices/beTrackIces" target="_blank">Bill of Entry Enquiry</a></li>
+      <li><a href="https://enquiry.icegate.gov.in/enquiryatices/sbTrack" target="_blank">Shipping Bill Enquiry</a></li>
+      <li><a href="https://enquiry.icegate.gov.in/enquiryatices/ChallanEnquiry/CE" target="_blank">Challan Enquiry</a></li>
+      <li><a href="https://www.old.icegate.gov.in/Webappl/Trade-Guide-on-Imports" target="_blank">Customs Duty Calculator</a></li>
+      <li><a href="https://foservices.icegate.gov.in/#/services/viewExchangeRate" target="_blank">Exchange Rate</a></li>
+    </ul>
+  </div>
+  <div class="right-body">
+    <h2>Customs Indore Administrative Setup</h2>
+        <iframe width="600" height="340" src="video/Flowchart.mp4" frameborder="0" allowfullscreen></iframe>
+        <h2>Flowchart of Customs Indore Administrative Setup</h2>
+        <div id="orgchart"></div>
+      
+    </div>
+  </div>
+  <!-- <video width="600" controls>
+    <source src="documents/Flowchart.mp4" type="video/mp4">
+    Your browser does not support the video tag. -->
+        <!-- Load Footer -->
+   <footer class="footer-wrapper">
+        <!-- Image Slider Section -->
+        <section class="carousel-wrapper">
+          <button class="arrow-left" onclick="slideCarousel(-200)">&lt;</button>
+          <div class="carousel-container" id="carousel">
+            <a target="_blank" href="http://digitalindia.gov.in/" title="Digital India">
+              <img src="images/footer/digital-india.png" alt="Digital India">
+            </a>
+            <a target="_blank" href="http://www.makeinindia.com/" title="Make In India">
+              <img src="images/footer/makeinindia.png" alt="Make In India">
+            </a>
+            <a target="_blank" href="http://india.gov.in/" title="National Portal of India">
+              <img src="images/footer/india-gov.png" alt="National Portal of India">
+            </a>
+            <a target="_blank" href="http://goidirectory.nic.in/" title="GOI Web Directory">
+              <img src="images/footer/goidirectory.png" alt="GOI Web Directory">
+            </a>
+            <a target="_blank" href="https://data.gov.in/" title="Data Portal">
+              <img src="images/footer/data-gov.png" alt="Data Portal">
+            </a>
+            <a target="_blank" href="https://mygov.in/" title="MyGov">
+              <img src="images/footer/mygov.png" alt="MyGov">
+            </a>
+            <a target="_blank" href="https://mygov.in/" title="World Customs Organization">
+              <img src="images/footer/WCO.JPG" alt="World Customs Organization">
+            </a>
+            <a target="_blank" href="https://mygov.in/" title="MCI">
+              <img src="images/footer/mci.png" alt="MCI">
+            </a>
+          </div>
+          <button class="arrow-right" onclick="slideCarousel(200)">&gt;</button>
+        </section>
+        <!-- Separator Line -->
+        <div class="footer-separator"></div>
+        <!-- Footer Bottom Section -->
+        <div class="footer-bottom-wrapper">
+          <div class="footer-bottom-container">
+            <div class="footer-content">
+              <strong>@2025 Indore Customs</strong> | Website Designed, Developed and Maintained by Indore Customs
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+ 
+    <!-- Include external JavaScript file -->
+<script src="scripts.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', {packages:["orgchart"]});
+        google.charts.setOnLoadCallback(drawChart);
+
+        let expandedNodes = new Set();
+
+        function drawChart() {
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Name');
+            data.addColumn('string', 'Manager');
+            data.addColumn('string', 'ToolTip');
+
+            let rows = [
+                [{'v':'Ministry of Finance', 'f':'Ministry of Finance'}, '', 'Top-Level Authority'],
+                [{'v':'Department of Revenue', 'f':'Department of Revenue'}, 'Ministry of Finance', 'Handles revenue policies'],
+                [{'v':'CBIC', 'f':'Central Board of Indirect Taxes & Customs'}, 'Department of Revenue', 'Regulates Customs & GST'],
+                [{'v':'Chief Commissioner Bhopal Zone', 'f':'Chief Commissioner Bhopal Zone'}, 'CBIC', 'Oversees Bhopal Zone'],
+                [{'v':'Customs Indore', 'f':'Customs Indore'}, 'Chief Commissioner Bhopal Zone', 'Indore Customs Administration'],
+                
+                [{'v':'ICD', 'f':'<div class="clickable" onclick="toggleNode(\'ICD\')">ICD</div>'}, 'Customs Indore', 'Inland Container Depot'],
+                [{'v':'Circle', 'f':'<div class="clickable" onclick="toggleNode(\'Circle\')">Circle</div>'}, 'Customs Indore', 'Regulatory Divisions'],
+                [{'v':'Airport', 'f':'<div class="clickable" onclick="toggleNode(\'Airport\')">Airport</div>'}, 'Customs Indore', 'Airport Customs'],
+                [{'v':'FPO', 'f':'<div class="clickable" onclick="toggleNode(\'FPO\')">FPO</div>'}, 'Customs Indore', 'Foreign Post Office'],
+                [{'v':'SEZ', 'f':'<div class="clickable" onclick="toggleNode(\'SEZ\')">SEZ</div>'}, '', 'Special Economic Zone']
+            ];
+
+            if (expandedNodes.has('ICD')) {
+                rows.push(...[
+                    [{'v':'ICD_Tihi', 'f':'Tihi'}, 'ICD', ''],
+                    [{'v':'ICD_Dhannad', 'f':'Dhannad'}, 'ICD', ''],
+                    [{'v':'ICD_Malanpur', 'f':'Malanpur'}, 'ICD', ''],
+                    [{'v':'ICD_Mandideep', 'f':'Mandideep'}, 'ICD', ''],
+                    [{'v':'ICD_Raipur', 'f':'Raipur'}, 'ICD', ''],
+                    [{'v':'ICD_Kheda', 'f':'Kheda'}, 'ICD', ''],
+                    [{'v':'ICD_Powerkheda', 'f':'Powerkheda'}, 'ICD', '']
+                ]);
+            }
+            if (expandedNodes.has('Circle')) {
+                rows.push(...[
+                    [{'v':'Circle_Bhopal', 'f':'Bhopal'}, 'Circle', ''],
+                    [{'v':'Circle_Indore', 'f':'Indore'}, 'Circle', ''],
+                    [{'v':'Circle_Ujjain', 'f':'Ujjain'}, 'Circle', ''],
+                    [{'v':'Circle_Jabalpur', 'f':'Jabalpur'}, 'Circle', ''],
+                    [{'v':'Circle_Raipur', 'f':'Raipur'}, 'Circle', '']
+                ]);
+            }
+            if (expandedNodes.has('Airport')) {
+                rows.push(...[
+                    [{'v':'Airport_Indore', 'f':'Indore'}, 'Airport', ''],
+                    [{'v':'Airport_Bhopal', 'f':'Bhopal'}, 'Airport', ''],
+                    [{'v':'Airport_Chhatarpur', 'f':'Chhatarpur'}, 'Airport', '']
+                ]);
+            }
+            if (expandedNodes.has('FPO')) {
+                rows.push(...[
+                    [{'v':'FPO_Raipur', 'f':'Raipur'}, 'FPO', ''],
+                    [{'v':'FPO_Bhopal', 'f':'Bhopal'}, 'FPO', '']
+                ]);
+            }
+            if (expandedNodes.has('SEZ')) {
+                rows.push(...[
+                    [{'v':'SEZ_A', 'f':'Pithampur, Dhar(Multi-Product)'}, 'SEZ', ''],
+                    [{'v':'SEZ_B', 'f':'Indore (5) ITES Units'}, 'SEZ', '']
+                ]);
+            }
+
+            data.addRows(rows);
+            var chart = new google.visualization.OrgChart(document.getElementById('orgchart'));
+            chart.draw(data, {'allowHtml':true});
+        }
+
+        function toggleNode(node) {
+            if (expandedNodes.has(node)) {
+                expandedNodes.delete(node);
+            } else {
+                expandedNodes.add(node);
+            }
+            drawChart();
+        }
+</script>
+<script>
+    function toggleContent(id) {
+      var content = document.getElementById(id);
+      if (content.style.display === "block") {
+        content.style.display = "none";
+      } else {
+        content.style.display = "block";
+      }
+    }
+  </script>
+    <!-- Add this JavaScript to handle the dropdown functionality -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var dropdowns = document.querySelectorAll('.has-dropdown');
+
+    dropdowns.forEach(function(dropdown) {
+      dropdown.addEventListener('mouseenter', function() {
+        var dropdownContent = this.querySelector('.dropdown-content');
+        if (dropdownContent) {
+          dropdownContent.style.display = 'block';
+        }
+      });
+
+      dropdown.addEventListener('mouseleave', function() {
+        var dropdownContent = this.querySelector('.dropdown-content');
+        if (dropdownContent) {
+          dropdownContent.style.display = 'none';
+        }
+      });
+    });
+  });
+</script>
+    <script>
+      function openModal(id) {
+          document.getElementById(id).style.display = 'block';
+          document.getElementById('overlay').style.display = 'block';
+      }
+      function closeModal() {
+          document.querySelectorAll('.modal').forEach(modal => modal.style.display = 'none');
+          document.getElementById('overlay').style.display = 'none';
+      }
+    </script>
+   </body>
+</html>
