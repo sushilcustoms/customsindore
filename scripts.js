@@ -72,4 +72,8 @@ document.addEventListener('DOMContentLoaded', () => {
             modal.appendChild(enlargedImg);
             document.body.appendChild(modal);
         }
+<<<<<<< HEAD
         startSlide();
+=======
+        startSlide();
+>>>>>>> 63c1b3cdccd7fd97a95197d8d4a7f837b03cf50e
